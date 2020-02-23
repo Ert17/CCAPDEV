@@ -155,10 +155,6 @@ header {
   grid-column:            3 / 4;
 }
 
-section p {
-  font-size:                   75px;
-}
-
 /* FIRST PART */
 #firstpart_homepage {
   background-color:       #F2B54A;
@@ -223,4 +219,15 @@ section p {
   top:                    400%;
   left:                   0;
   width:                  100%;
+}
+
+h2.heading {
+  font-size:              40px;
+  margin-top:             0;
+  margin-bottom:          15px;
+}
+
+.member {
+  margin-bottom: 50px;
+  text-align: center;
 }
