@@ -159,6 +159,10 @@ header {
   grid-column:            3 / 4;
 }
 
+section {
+  padding-top:            5em;
+}
+
 /* FIRST PART */
 #firstpart_homepage {
   background-color:       #F2B54A;

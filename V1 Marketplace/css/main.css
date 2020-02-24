@@ -1,0 +1,104 @@
+* {
+  list-style:             none;
+  text-decoration:        none;
+  object-position:        fixed;
+  margin:                 0;
+  padding:                0;
+}
+
+html {
+  scroll-behavior:        smooth;
+}
+
+body {
+  margin:                 0;
+  font-family:            "Poppins", sans-serif;
+  background-color:       white;
+  text-align:             center;
+}
+
+header {
+  --text:                 #f4f4f4;
+  --text-inverse:         #333;
+  --background:           transparent;
+  position:               fixed;
+  top:                    0;
+  left:                   0;
+  right:                  0;
+  z-index:                999;
+  display:                flex;
+  flex-direction:         row;
+  justify-content:        space-around;
+  align-content:          center;
+  padding:                0.5em 3em;
+  transition:             background 250ms ease-in;
+  background:             var(--background);
+  color:                  var(--text);
+}
+
+
+.ass {
+  background-color:       #F2B54A;
+  height:                 100vh;
+  position:               static;
+  top:                    0;
+  left:                   0;
+  width:                  100%;
+}
+
+/*** STYLES ***/
+.site-logo {
+  font-weight:            900;
+  font-size:              0.8rem;
+  color:                  var(--text);
+  text-decoration:        none;
+}
+
+.search {
+  display:                inline-block;
+  position:               relative;
+  height:                 50px;
+  width:                  50px;
+  box-sizing:             border-box;
+  margin:                 0px 8px 7px 0px;
+  padding:                7px 9px 0px 9px;
+  border:                 3px solid #FFFFFF;
+  border-radius:          25px;
+  -webkit-transition:     all 200ms ease;
+  transition:             all 200ms ease;
+  cursor:                 text;
+}
+
+.search:after {
+  content:                "";
+  position:               absolute;
+  width:                  3px;
+  height:                 20px;
+  right:                  -5px;
+  top:                    31px;
+  background:             #FFFFFF;
+  border-radius:          3px;
+  -webkit-transform:      rotate(-45deg);
+          transform:      rotate(-45deg);
+  -webkit-transition:     all 200ms ease;
+  transition:             all 200ms ease;
+}
+.search.active,
+.search:hover {
+  width:                  500px;
+  margin-right:           0px;
+}
+.search.active:after,
+.search:hover:after {
+  height:                 0px;
+}
+.search input {
+  width:                  100%;
+  border:                 none;
+  box-sizing:             border-box;
+  font-family:            Helvetica;
+  font-size:              25px;
+  color:                  white;
+  background:             transparent;
+  outline-width:          0px;
+}
