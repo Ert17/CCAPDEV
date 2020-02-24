@@ -192,7 +192,7 @@ header {
 
 /* THIRD PART */
 #thirdpart_homepage {
-  background-color:       #03A89E;
+  background-color:       #0f4c81;
   height:                 100vh;
   position:               absolute;
   top:                    200%;
@@ -221,6 +221,11 @@ header {
   width:                  100%;
 }
 
+.row {
+  display:                flex;
+  justify-content:        center;
+}
+
 h2.heading {
   font-size:              40px;
   margin-top:             0;
@@ -228,6 +233,12 @@ h2.heading {
 }
 
 .member {
-  margin-bottom: 50px;
-  text-align: center;
+  margin-bottom:          50px;
+  text-align:             center;
+}
+
+.member img {
+  width:                  225px;
+  height:                 225px;
+  border:                 7px solid rgba(0, 0, 0, 0.1);
 }
