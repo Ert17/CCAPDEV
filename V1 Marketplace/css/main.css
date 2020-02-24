@@ -6,6 +6,10 @@
   padding:                0;
 }
 
+html {
+  scroll-behavior:        smooth;
+}
+
 body {
   margin:                 0;
   font-family:            "Poppins", sans-serif;
@@ -167,7 +171,7 @@ header {
 
 /* SECOND PART */
 #secondpart_homepage {
-  background-color:       #FF9912;
+  background-color:       green;
   color:                  white;
   height:                 100vh;
   position:               absolute;
@@ -192,7 +196,7 @@ header {
 
 /* THIRD PART */
 #thirdpart_homepage {
-  background-color:       #0f4c81;
+  background-color:       blue;
   height:                 100vh;
   position:               absolute;
   top:                    200%;
@@ -202,7 +206,7 @@ header {
 
 /* FOURTH PART */
 #fourthpart_homepage {
-  background-color:       #000000;
+  background-color:       #red;
   color:                  #F2B54A;
   height:                 100vh;
   position:               absolute;
@@ -213,7 +217,7 @@ header {
 
 /* FIFTH PART */
 #fifthpart_homepage {
-  background-color:       #9B5913;
+  background-color:       pink;
   height:                 100vh;
   position:               absolute;
   top:                    400%;
