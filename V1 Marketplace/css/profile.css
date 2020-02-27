@@ -13,7 +13,7 @@ html {
 body {
   margin:                 0;
   font-family:            "Poppins", sans-serif;
-  background-color:       white;
+  background-color:       #F2B54A;
   text-align:             center;
 }
 
@@ -24,41 +24,41 @@ body {
   display:                flex;
 }
 
-.main {
-  background-color:       #F2B54A;
-  height:                 100vh;
-  position:               static;
-  top:                    0;
-  left:                   0;
-  width:                  100%;
-}
-
-.sidenav {
-  width:                  100px; 
-  text-align:             left;
-  margin-left:            10px;
-  position:               static;
+.profile {
+  position:               absolute;
   float:                  left;
-  z-index:                1; 
-  top:                    20; 
-  left:                   0;
+  top:                    25% ;
+  width:                  25%;
+  text-align:             center;
+  margin-left:            10px;
   background-color:       transparent; 
   overflow-x:             hidden;
   padding-top:            20px;
 }
 
-.sidenav a {
-  display:                block;
+.profile img {
+  width:                  150px;
+  height:                 150px;
+  border:                 7px solid rgba(0, 0, 0, 0.1);
 
 }
 
-.posts {    
-  width:                  90%;
+.main {
   position:               static;
-  float:                  left;
+  float:                  right;
+  display:                flex;
+  top:                    25%;
+  left:                   0;
+  width:                  75%;
+}
+
+.posts {    
+  height:                 50%;
+  position:               static;
   left:                   20;
   display:                flex;
-  flex-wrap:              wrap;
+  flex-wrap:              nowrap;
+  overflow-x: auto;
 
 }
 
