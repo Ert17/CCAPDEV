@@ -5,9 +5,131 @@
 
 	<meta name="authors" content="EW LOPEZ, G OLAN">
 	<meta name="description" content="home">	
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>	
 	<link rel="stylesheet" href="css/home.css" />
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css" />
+	<style type="text/css">
+		/* General Setting */
+		* {
+			list-style: 		none;
+			text-decoration: 	none;
+			margin: 			0;
+			padding: 			0;
+		}
+		
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			background-color: 	white;
+			text-align: 		center;
+			font-family: "Poppins", sans-serif;
+		}
+		#webname {
+				font-size: 		500%;
+		}
+		form {
+			display: 			inline-block;
+		}
+		#searchbar {
+			text-align: 		left;
+			line-height: 		2;
+			font-size: 			16px;
+			float: 				left;
+		}
+		#searchbutton {
+			float: 				left;
+		}
+		
+		#firstpart_homepage {
+		  background-color: #F2B54A;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		#secondpart_homepage {
+		  background-color: green;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		#thirdpart_homepage {
+		  background-color: blue;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		#fourthpart_homepage {
+		  background-color: red;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		#fifthpart_homepage {
+		  background-color: pink;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		
+		/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+			border-radius: 50px;
+			color: black;
+		  background-color: #fefefe;
+		  margin: auto;
+		  top: 15%;
+		  padding: 20px;
+		  border: 1px solid #888;
+		  width: 20%;
+		  box-shadow: 10px 10px;
+		}
+
+		/* The Close Button */
+		.close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+	
+	</style>
+	
+	
 </head>
 <body>
 	<header>
@@ -23,10 +145,43 @@
 		<nav class="account">
 			<ul class="nav__list">
 				<li class="nav__list-item">
-					<a class="nav__link nav__link--btn" href="#">Login</a>
+					<a class="nav__link nav__link--btn myBtn" id="myBtn" href="#">Login</a>
+					<div id="myModal" class="modal">
+						<div class="modal-content w3-modal-content w3-animate-bottom">
+							<span class="close">&times;</span>
+							<p><font size = "5">LOGIN</font></p><br>
+							<form>
+								<label for="username">Username:</label><br>
+								<input type="text" id="username" name="username" ><br>
+								<label for="password">Password:</label><br>
+								<input type="password" id="password" name="password"><br><br>
+								<a class="nav__link nav__link--btn" href="#">Login</a>
+							</form> 
+						</div>
+					</div>
 				</li>
 				<li class="nav__list-item">
-					<a class="nav__link nav__link--btn nav__link--btn--highlight" href="#">Register</a>
+					<a onclick="document.getElementById('id02').style.display='inline'" class="nav__link nav__link--btn nav__link--btn--highlight" href="#">Register</a>
+					
+					
+					<div id="id02" class="modal">
+						<div class="modal-content w3-modal-content w3-animate-bottom">
+							<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
+							<p><font size = "5">REGISTER</font></p><br>
+							<form>
+								<label for="username">Username:</label><br>
+								<input type="text" id="username" name="username" ><br>
+								<label for="password">Password:</label><br>
+								<input type="password" id="password" name="password"><br>
+								<label for="cpassword">Confirm Password:</label><br>
+								<input type="password" id="cpassword" name="cpassword"><br><br>
+								<a class="nav__link nav__link--btn" href="#">Register</a>
+							</form> 
+						</div>
+					  </div>
+					</div>
+				
+				
 				</li>
 			</ul>
 		</nav>
@@ -94,6 +249,34 @@
 		</div>
 
 	</section>
+	
+	<script>
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+	  modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	}
+	</script>
 	
     <script src="js/observers.js"></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'></script>
