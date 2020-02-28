@@ -1,7 +1,6 @@
 * {
   list-style:             none;
   text-decoration:        none;
-  object-position:        fixed;
   margin:                 0;
   padding:                0;
 }
@@ -17,24 +16,24 @@ body{
 }
 
 .profile {
-  position:               absolute;
+  position:               fixed;
   float:                  left;
   top:                    0% ;
   width:                  23%;
-  height: 97.3%;
+  height: 				  97.3%;
   text-align:             center;
   margin-left:            0px;
   background-color:       #F2754A; 
   overflow-x:             hidden;
   padding-top:            20px;
-  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 			  0px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile img {
   width:                  150px;
   height:                 150px;
-  border:                 7px solid rgba(0, 0, 0, 0.1);
-
+  border:                 7px solid white;
+	border-radius: 		  150px;
 }
 
 .main {
@@ -44,26 +43,53 @@ body{
   top:                    25%;
   left:                   0;
   width:                  77%;
+  height: 100%;
 }
+
+.reviews {
+  position:               static;
+  float:                  right;
+  display:                flex;
+  top:                    25%;
+  left:                   0;
+  width:                  74%;
+}
+
+.review_textbox{
+	padding: 10px;
+	border-radius: 5px;
+	outline:none;
+	color: white;
+	background-color: #F2B54A;
+	border: 1.5px solid white;
+	font-family:"Poppins", sans-serif;
+	letter-spacing: 2px;
+	font-size: 15px;
+}	
 
 .posts {    
   height:                 50%;
   position:               static;
-  left:                   20;
   display:                flex;
   flex-wrap:              nowrap;
   overflow-x: auto;
-
+  padding-right: 150px;
 }
 
 .card {
   flex:                   0 0 auto;
   background-color:       white;
-  width:                  200px;
-  height:                 300px;
+  width:                  192px;
+  height:                 255.375px;
   line-height:            100px;
   margin:                 10px;
   text-align:             center;
+  transition: transform .2s;
+}
+
+.card:hover {
+	transform: scale(1.05);
+  box-shadow: 			  10px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /*** STYLES ***/
@@ -71,6 +97,9 @@ body{
   width:                  50px;
   height:                 35px;
   margin:                 10px;
+}
+.title{
+	text-shadow: 3px 3px #F2754A;
 }
 
 .search {
@@ -122,11 +151,9 @@ body{
   outline-width:          0px;
 }
 
-
-
-
-
-
+.checked {
+  color: white;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -147,7 +174,62 @@ body{
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: white; 
 }
 
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: black; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > input:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: white;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #F2754A;  }
+
+.enter_review{
+	height: 30px;
+	width: 80px;
+	margin-left: 55px;
+	background: transparent;
+	border: 1.5px solid white;
+	border-radius: 50px;
+	font-family:"Poppins", sans-serif;
+	letter-spacing: 2px;
+	font-size: 15px;
+	color: white;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+.enter_review:hover{
+	background: #F2754A;
+	border: 1.5px solid #F2754A;
+	color: black;
+}
 
