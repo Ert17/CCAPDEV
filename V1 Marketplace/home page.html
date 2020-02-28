@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Marketplace</title>
+
+	<meta name="authors" content="EW LOPEZ, G OLAN">
+	<meta name="description" content="home">	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>	
+	<link rel="stylesheet" href="css/home.css" />
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css" />
+	<style type="text/css">
+		/* General Setting */
+		* {
+			list-style: 		none;
+			text-decoration: 	none;
+			margin: 			0;
+			padding: 			0;
+		}
+		
+		html {
+			scroll-behavior: smooth;
+		}
+
+		body {
+			background-color: 	white;
+			text-align: 		center;
+			font-family: "Poppins", sans-serif;
+		}
+		#webname {
+				font-size: 		500%;
+		}
+		form {
+			display: 			inline-block;
+		}
+		#searchbar {
+			text-align: 		left;
+			line-height: 		2;
+			font-size: 			16px;
+			float: 				left;
+		}
+		#searchbutton {
+			float: 				left;
+		}
+		
+		#firstpart_homepage {
+		  background-color: #F2B54A;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		#secondpart_homepage {
+		  background-color: green;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		#thirdpart_homepage {
+		  background-color: blue;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		#fourthpart_homepage {
+		  background-color: red;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		#fifthpart_homepage {
+		  background-color: pink;
+		  height: 100vh;
+		  position: relative;
+		  top: 0;
+		  left: 0;
+		  width: 100%;
+		}
+		
+		/* The Modal (background) */
+		.modal {
+		  display: none; /* Hidden by default */
+		  position: fixed; /* Stay in place */
+		  z-index: 1; /* Sit on top */
+		  padding-top: 100px; /* Location of the box */
+		  left: 0;
+		  top: 0;
+		  width: 100%; /* Full width */
+		  height: 100%; /* Full height */
+		  overflow: auto; /* Enable scroll if needed */
+		  background-color: rgb(0,0,0); /* Fallback color */
+		  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+		}
+
+		/* Modal Content */
+		.modal-content {
+			border-radius: 50px;
+			color: black;
+		  background-color: #fefefe;
+		  margin: auto;
+		  top: 15%;
+		  padding: 20px;
+		  border: 1px solid #888;
+		  width: 20%;
+		  box-shadow: 10px 10px;
+		}
+
+		/* The Close Button */
+		.close {
+		  color: #aaaaaa;
+		  float: right;
+		  font-size: 28px;
+		  font-weight: bold;
+		}
+
+		.close:hover,
+		.close:focus {
+		  color: #000;
+		  text-decoration: none;
+		  cursor: pointer;
+		}
+	
+	</style>
+	
+	
+</head>
+<body>
+	<header>
+		<nav class="main-nav">
+			<ul class="nav__list">
+				<li class="nav__list-item"><a href="#firstpart_homepage" class="nav__link">Home</a></li>
+				<li class="nav__list-item"><a href="#secondpart_homepage" class="nav__link">About Us</a></li>
+				<li class="nav__list-item"><a href="#thirdpart_homepage" class="nav__link">Top Rated Items</a></li>
+				<li class="nav__list-item"><a href="#fourthpart_homepage" class="nav__link">Process</a></li>
+				<li class="nav__list-item"><a href="#fifthpart_homepage" class="nav__link">Q&A's</a></li>
+			</ul>
+		</nav>
+		<nav class="account">
+			<ul class="nav__list">
+				<li class="nav__list-item">
+					<a class="nav__link nav__link--btn myBtn" id="myBtn" href="#">Login</a>
+					<div id="myModal" class="modal">
+						<div class="modal-content w3-modal-content w3-animate-bottom">
+							<span class="close">&times;</span>
+							<p><font size = "5">LOGIN</font></p><br>
+							<form>
+								<label for="username">Username:</label><br>
+								<input type="text" id="username" name="username" ><br>
+								<label for="password">Password:</label><br>
+								<input type="password" id="password" name="password"><br><br>
+								<a class="nav__link nav__link--btn" href="#">Login</a>
+							</form> 
+						</div>
+					</div>
+				</li>
+				<li class="nav__list-item">
+					<a onclick="document.getElementById('id02').style.display='inline'" class="nav__link nav__link--btn nav__link--btn--highlight" href="#">Register</a>
+					
+					
+					<div id="id02" class="modal">
+						<div class="modal-content w3-modal-content w3-animate-bottom">
+							<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
+							<p><font size = "5">REGISTER</font></p><br>
+							<form>
+								<label for="username">Username:</label><br>
+								<input type="text" id="username" name="username" ><br>
+								<label for="password">Password:</label><br>
+								<input type="password" id="password" name="password"><br>
+								<label for="cpassword">Confirm Password:</label><br>
+								<input type="password" id="cpassword" name="cpassword"><br><br>
+								<a class="nav__link nav__link--btn" href="#">Register</a>
+							</form> 
+						</div>
+					  </div>
+					</div>
+				
+				
+				</li>
+			</ul>
+		</nav>
+	</header>
+    <section id = "firstpart_homepage">
+		<a href="home.html"><image src="Marketplace_LOGO2.png" alt="logo" height="323.25" width="500" align="middle" style="margin:100px 0px"></image></a><br>
+	
+	 	<label class="search" for="inpt_search">
+			<input id="inpt_search" type="text" style: "width: automatic"/>
+		</label>
+	</section>
+	
+	<section id = "secondpart_homepage">
+		<h2 class="heading">TOP RATED ITEMS</h2>
+		<div class="scrolling-wrapper">
+  			<div class="card">E</div>
+  			<div class="card">A</div>
+  			<div class="card">R</div>
+  			<div class="card">T</div>
+ 			<div class="card">H</div>
+  			<div class="card">E</div>
+	</div>
+	</section>
+
+	<section id = "thirdpart_homepage">
+		<h2 class="heading">PROCESS</h2>
+
+	</section>
+
+	<section id = "fourthpart_homepage">
+		<h2 class="heading"> Q&As</h2>
+
+	</section>
+
+	<section id = "fifthpart_homepage">
+		<div>
+			<div class="row">
+				<div>
+					<h2 class="heading">THE TEAM</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="member">
+						<img src="dpic.jpg" alt=>
+						<h4>Earth Lopez</h4>
+						<p>Member 1</p>
+					</div>
+				</div>
+				<div class="col">
+					<div class="member">
+						<img src="dpic.jpg" alt=>
+						<h4>Gabriel Olan</h4>
+						<p>Member 2</p>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-center">
+					<p class="large text-muted">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.
+					</p>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	
+	<script>
+	// Get the modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+	  modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	}
+	</script>
+	
+    <script src="js/observers.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js'></script>
+	<script  src="js/script.js"></script>
+</body>
+</html>
