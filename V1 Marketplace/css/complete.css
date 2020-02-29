@@ -562,3 +562,29 @@ textarea {
 .title{
 	text-shadow: 3px 3px #F2754A;
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #F2B54A; 
+  border: 1.5px solid white;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: white; 
+}
+
+::-webkit-scrollbar:vertical {
+    display:             none;
+}
