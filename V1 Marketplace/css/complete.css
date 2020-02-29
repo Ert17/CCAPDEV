@@ -20,7 +20,7 @@ body {
   --text: 				       #F2B54A;
   --text-inverse: 		   #333;
   --background: 		     #F2B54A;
-  position:              absolute;
+  position:              fixed;
   top:                   0;
   left:                  0;
   right:                 0;
