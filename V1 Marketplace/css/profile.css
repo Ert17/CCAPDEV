@@ -10,14 +10,10 @@ html {
   scroll-behavior:        smooth;
 }
 
-::-webkit-scrollbar:vertical {
-    display: none;
-}
-
 body{
-	font-family:"Poppins", sans-serif;
-	letter-spacing: 2px;
-	background: #F2B54A;
+	font-family:           "Poppins", sans-serif;
+	letter-spacing:        2px;
+	background:            #F2B54A;
 }
 
 .profile {
@@ -25,20 +21,20 @@ body{
   float:                  left;
   top:                    0% ;
   width:                  23%;
-  height: 				  97.3%;
+  height: 				        97.3%;
   text-align:             center;
   margin-left:            0px;
   background-color:       #F2754A; 
   overflow-x:             hidden;
   padding-top:            20px;
-  box-shadow: 			  0px 10px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 			      0px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
 .profile img {
 	width:                  150px;
 	height:                 150px;
 	border:                 7px solid white;
-	border-radius: 		  150px;
+	border-radius: 		      150px;
 }
 
 .main {
@@ -67,20 +63,19 @@ body{
   top:                    25%;
   left:                   0;
   width:                  75%;
-  padding-top: 10px;
+  padding-top:            10px;
 }
 
 .review_textbox{
-	padding: 10px;
-	border-radius: 5px;
-	outline:none;
-	color: white;
-	background-color: #F2B54A;
-	border: 1.5px solid white;
-	font-family:"Poppins", sans-serif;
-	letter-spacing: 2px;
-	font-size: 15px;
-	width:275px;
+	padding:               10px;
+	border-radius:         5px;
+	outline:               none;
+	color:                 white;
+	background-color:      #F2B54A;
+	border:                1.5px solid white;
+	letter-spacing:        2px;
+	font-size:             15px;
+	width:                 275px;
 }	
 
 .posts {    
@@ -88,12 +83,12 @@ body{
   position:               static;
   display:                flex;
   flex-wrap:              nowrap;
-  overflow-x: auto;
-  padding-right: 150px;
+  overflow-x:             auto;
+  padding-right:          150px;
 }
 
 .item_description{
-	padding-left: 10px;
+	padding-left:            10px;
 }
 
 .card {
@@ -102,12 +97,12 @@ body{
   width:                  192px;
   height:                 255.375px;
   margin:                 10px;
-  transition: transform .2s;
+  transition:             transform .2s;
 }
 
 .card:hover {
-	transform: scale(1.05);
-  box-shadow: 			  10px 4px 10px rgba(0, 0, 0, 0.2);
+	transform:              scale(1.05);
+  box-shadow: 			      10px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /*** STYLES ***/
@@ -116,8 +111,9 @@ body{
   height:                 35px;
   margin:                 10px;
 }
+
 .title{
-	text-shadow: 3px 3px #F2754A;
+	text-shadow:            3px 3px #F2754A;
 }
 
 .search {
@@ -195,6 +191,10 @@ body{
   background: white; 
 }
 
+::-webkit-scrollbar:vertical {
+    display:             none;
+}
+
 .rating { 
   border: none;
   float: left;
@@ -250,9 +250,6 @@ body{
 	border: 1.5px solid #F2754A;
 	color: black;
 }
-
-
-
 
 .rightbox {
   width: 100%;
