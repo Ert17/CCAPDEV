@@ -60,6 +60,16 @@ body{
   width:                  75%;
 }
 
+.reviews2 {
+  position:               static;
+  float:                  right;
+  display:                flex;
+  top:                    25%;
+  left:                   0;
+  width:                  75%;
+  padding-top: 10px;
+}
+
 .review_textbox{
 	padding: 10px;
 	border-radius: 5px;
@@ -249,7 +259,7 @@ body{
   height: 100%;
   float: left;
   overflow: scroll;
-  padding: 10px;
+  padding-left:100px;
   outline: none;
 }
 .box2 {
