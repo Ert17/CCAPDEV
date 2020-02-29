@@ -128,8 +128,6 @@ body {
   padding-top:            5px;
 }
 
-
-
 /** PROFILE **/
 .profile {
   position:               fixed;
@@ -481,7 +479,7 @@ textarea {
 }
 
 .checked {
-  color: #F2754A;
+  color:                  white;
 }
 
 /***** CSS Magic to Highlight Stars on Hover *****/
