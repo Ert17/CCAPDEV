@@ -92,7 +92,7 @@
 	<br><br><br><br>
 	<div>
 	<section class="reviews">
-		<div>
+		<div class="rightbox">
 			<br><b><p class= "title"><font size = "15" color= "white">ON-SHELF</font></p></b>
 		</div>
 	</section>
@@ -135,7 +135,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="reviews">
+	<section class="reviews2">
 		<div class="rightbox">
 			<div class="box1">
 				<br><b><p class= "title"><font size = "15" color= "white">REVIEWS</font></p></b>
@@ -158,16 +158,6 @@
 	</section>
 	</div>
 	<script src="js/Navigation_bar.js"></script>
-	<script>	
-		$("#submit_button").click(function(){
-			if($("#review").val()!=''){
-				$("ol").prepend("<div class='box2 animated jackInTheBox'><img src='dpic.jpg'> Anonymous <br><br>"+$("#review").val()+"</div>");
-				$('#review').val('');
-			}
-			else{
-				alert("Can't submit an empty review");
-			}
-		 });
-	</script>
+	<script src="js/Reviews.js"></script>
 </body>
 </html>
