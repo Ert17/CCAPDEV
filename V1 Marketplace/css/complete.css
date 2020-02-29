@@ -85,6 +85,25 @@ body {
 }
 
 /** ITEM **/
+.posts {    
+  height:                 50%;
+  position:               static;
+  display:                flex;
+  flex-wrap:              nowrap;
+  overflow-x:             auto;
+  padding-right:          150px;
+}
+
+.main {
+  position:               static;
+  float:                  right;
+  display:                flex;
+  top:                    25%;
+  left:                   0;
+  width:                  77%;
+  height: 100%;
+}
+
 .item {
   position:               fixed;
   float:                  left;
