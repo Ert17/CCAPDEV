@@ -550,3 +550,12 @@ textarea {
   margin-bottom:          10px;
 }
 
+.item_section{
+  border: 1.5px solid white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-right:25px;
+  background-color: #F2754A;
+  box-shadow: 10px 10px white;
+}
+
