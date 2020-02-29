@@ -44,20 +44,19 @@ body {
   transition:             transform .2s;
 }
 
-.main {
+.main-1 {
   position:               relative;
   top:                    100px;
   padding-left:           50px;
 }
 
-.main2 {
+.main-2 {
   position:               static;
   float:                  right;
   display:                flex;
   top:                    25%;
   left:                   0;
   width:                  77%;
-  height: 100%;
 }
 
 .review_textbox{
@@ -85,23 +84,13 @@ body {
 }
 
 /** ITEM **/
-.posts {    
+.posts-2 {    
   height:                 50%;
   position:               static;
   display:                flex;
   flex-wrap:              nowrap;
   overflow-x:             auto;
   padding-right:          150px;
-}
-
-.main {
-  position:               static;
-  float:                  right;
-  display:                flex;
-  top:                    25%;
-  left:                   0;
-  width:                  77%;
-  height: 100%;
 }
 
 .item {
@@ -131,15 +120,6 @@ body {
   padding-top: 			      50px;
   padding-left: 		      10px;
   margin-bottom: 		      50px;
-}
-
-.posts-2 {    
-  height:                 50%;
-  position:               static;
-  display:                flex;
-  flex-wrap:              nowrap;
-  overflow-x: 			      auto;
-  padding-right: 		      150px;
 }
 
 .item_description2{
@@ -196,32 +176,32 @@ body {
 /** HEADER **/
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width:                   10px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background:              transparent;
 }
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #F2B54A; 
-  border: 1.5px solid white;
-  border-radius: 50px;
+  background:              #F2B54A; 
+  border:                  1.5px solid white;
+  border-radius:           50px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: white; 
+  background:              white; 
 }
 
 ::-webkit-scrollbar:vertical {
-    display:             none;
+    display:               none;
 }
 
 .title{
-  text-shadow: 3px 3px #F2754A;
+  text-shadow:             3px 3px #F2754A;
 }
 
 #searchbox2 {
