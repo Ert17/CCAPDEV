@@ -74,7 +74,7 @@
 					</li>
 				</ul>
 			</nav>
-		</div>
+	</div>
 
 	<section class="profile">
 		<br><br><br><br><br><br>
@@ -85,66 +85,101 @@
 		<span class="fa fa-star checked"></span>
 		<span class="fa fa-star checked"></span>
 		<span class="fa fa-star"></span><br><br>
-		<font size = "3px" color="white">My name is Earth! <br>Welcome to my store!</font><br>
+		<font size = "3px" color="white">My name is Earth! <br>Welcome to my store!</font><br><br>
+		<button id="btncontact" class = "btncontact" onclick="display()">
+			Items & Reviews
+		</button>
+		<button id="btncontact" class = "btncontact" onclick="Sell_Item()">
+			Sell an Item
+		</button>
 	</section>
-	<div>
-	<section class="reviews">
-		<div class="rightbox">
-			<br><b><p class= "title"><font size = "15" color= "white">ON-SHELF</font></p></b>
-		</div>
-	</section>
-	<section class="main-2">
-		<div class="posts-2" style="height: 296px;">
-			<a href = "item_drone_earth.html"><div class="card" align="left">
-				<image src="items_samples/87881231_2653642001428328_7594720382377000960_n.jpg" height="192px" width="192px"><br>
-				<p class="item_description">Drone</p>
-				<p class="item_description">₱ 15,000</p>
-			</div></a>
-  			<a href = "item_galaxy_earth.html"><div class="card" align="left">
-				<image src="items_samples/87954002_606624916846066_8755808934800916480_n.jpg" height="192px" width="192px"><br>
-				<p class="item_description">Galaxy Z Flip</p>
-				<p class="item_description">₱ 50,000</p>
-			</div></a>
-  			<a href = "item_gucci_earth.html"><div class="card" align="left">
-				<image src="items_samples/88133270_2607972352662328_3626096512687144960_n.jpg" height="192px" width="192px"><br>
-				<p class="item_description">Gucci Jacket</p>
-				<p class="item_description">₱ 50,000,000</p>
-			</div></a>
-  			<a href = "item_macbook_earth.html"><div class="card" align="left">
-				<image src="items_samples/87983765_210112840362354_6057522158022688768_n.jpg" height="192px" width="192px"><br>
-				<p class="item_description">Macbook</p>
-				<p class="item_description">₱ 72,000</p>
-			</div></a>
- 			<a href = "item_basketball_earth.html"><div class="card" align="left">
-				<image src="items_samples/88175361_1076655529362899_1883557456689233920_n.jpg" height="192px" width="192px"><br>
-				<p class="item_description">Molten Limited Edition Basketball</p>
-				<p class="item_description">₱ 100,000</p>
-			</div></a>
-		</div>
-	</section>
-	<section class="reviews2">
-		<div class="rightbox">
-			<div class="box1">
-				<br><b><p class= "title"><font size = "15" color= "white">REVIEWS</font></p></b>
-				<br>
-				<textarea class="review_textbox box" placeholder="Tell us something about this user..." id="review" rows="3" cols="30" maxlength="161"></textarea><br>
-				<fieldset class="rating">
-					<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" ></label>
-					<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" ></label>
-					<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" ></label>
-					<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" "></label>
-					<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" ></label>
-				</fieldset>
-				<button id="submit_button" class = "enter_review">Submit</button>
+
+	<div id="Item_review" style="display: block">
+		<section class="reviews">
+			<div class="rightbox">
+				<br><b><p class= "title"><font size = "15" color= "white">ON-SHELF</font></p></b>
 			</div>
-			<ol>
-			</ol>
-			
-			
-		</div>
-	</section>
+		</section>
+		<section class="main-2">
+			<div class="posts-2" style="height: 296px;">
+				<a href = "item_drone_earth.html"><div class="card" align="left">
+					<image src="items_samples/87881231_2653642001428328_7594720382377000960_n.jpg" height="192px" width="192px"><br>
+					<p class="item_description">Drone</p>
+					<p class="item_description">₱ 15,000</p>
+				</div></a>
+					<a href = "item_galaxy_earth.html"><div class="card" align="left">
+					<image src="items_samples/87954002_606624916846066_8755808934800916480_n.jpg" height="192px" width="192px"><br>
+					<p class="item_description">Galaxy Z Flip</p>
+					<p class="item_description">₱ 50,000</p>
+				</div></a>
+					<a href = "item_gucci_earth.html"><div class="card" align="left">
+					<image src="items_samples/88133270_2607972352662328_3626096512687144960_n.jpg" height="192px" width="192px"><br>
+					<p class="item_description">Gucci Jacket</p>
+					<p class="item_description">₱ 50,000,000</p>
+				</div></a>
+					<a href = "item_macbook_earth.html"><div class="card" align="left">
+					<image src="items_samples/87983765_210112840362354_6057522158022688768_n.jpg" height="192px" width="192px"><br>
+					<p class="item_description">Macbook</p>
+					<p class="item_description">₱ 72,000</p>
+				</div></a>
+					<a href = "item_basketball_earth.html"><div class="card" align="left">
+					<image src="items_samples/88175361_1076655529362899_1883557456689233920_n.jpg" height="192px" width="192px"><br>
+					<p class="item_description">Molten Limited Edition Basketball</p>
+					<p class="item_description">₱ 100,000</p>
+				</div></a>
+			</div>
+		</section>
+		<section class="reviews2">
+			<div class="rightbox">
+				<div class="box1">
+					<br><b><p class= "title"><font size = "15" color= "white">REVIEWS</font></p></b>
+					<br>
+					<textarea class="review_textbox box" placeholder="Tell us something about this user..." id="review" rows="3" cols="30" maxlength="161"></textarea><br>
+					<fieldset class="rating">
+						<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" ></label>
+						<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" ></label>
+						<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" ></label>
+						<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" "></label>
+						<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" ></label>
+					</fieldset>
+					<button id="submit_button" class = "enter_review">Submit</button>
+				</div>
+				<ol>
+				</ol>
+			</div>
+		</section>
 	</div>
-	<script src="js/Navigation_bar.js"></script>
-	<script src="js/Reviews.js"></script>
+
+	<div id="sell_item" style="display: none">
+		<section class="sell">
+			<b><p class= "title"><font size = "15" color= "white">SELL AN ITEM</font></p></b>
+			
+			<div class="avatar-upload">
+				<div class="avatar-edit">
+					<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+					<label for="imageUpload"></label>
+				</div>
+				<div class="avatar-preview2">
+					<div id="imagePreview" style="background-image: url(dpic.jpg);">
+					</div>
+				</div>
+			</div>
+
+			<div class="sell_form">
+				<font color="black">
+				<p>Item name:<input type="text" id="Item_name" name="Item_name"></p><br>
+				<p>Description:<input type="text" id="Description" name="Description"></p><br>
+				<p>Price:<input type="text" id="Price" name="Price"></p><br>
+				<p>Quantity:<input type="text" id="Quantity" name="Quantity"></p><br>
+				<p>Meet up location:<input type="text" id="Location" name="Location"></p><br>
+				<p>Contact Information:<input type="text" id="Contact" name="Contact"></p><br>
+				<p>Mode of payment:<input type="text" id="Payment" name="Payment"></p>
+				</font>
+				<button id="submit_button" class = "enter_sell center">Submit</button>
+			</div>
+		</section>
+	</div>
+	
+	<script src="js/complete.js"></script>
 </body>
 </html>
