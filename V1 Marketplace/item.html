@@ -9,13 +9,13 @@
 	<link rel="stylesheet" href="css/complete.css" />
 	<link rel="stylesheet" href="css/animation.css" />
 
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
 	<! –– for the navigation bar ––>
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 </head>
@@ -97,10 +97,15 @@
 			<span class="fa fa-star"></span></p><br>
 			<section class="item_section">
 				<font color="white">
-				<p><b> Quantity:</b> 1</p>
-				<p><b> Meet up location:</b> Laguna</p>
-				<p><b> Contact information:</b> 09165482619</p>
-				<p><b> Mode of payment:</b> Paypal</p><br>
+				<button id="btncontact" onclick="display()">
+				    Get Contact Information
+				</button>
+				<div id="contact" style="display: none">
+				    <p><b> Quantity:</b> 1</p>
+					<p><b> Meet up location:</b> Laguna</p>
+					<p><b> Contact information:</b> 09165482619</p>
+					<p><b> Mode of payment:</b> Paypal</p><br>
+				</div>
 				<p>Selling this 2nd hand Iphone XR. Bought only 2 months ago. Still in good condition. 90% battery life.</p>
 				</font>
 			</section><br><br><br>
@@ -124,5 +129,12 @@
 	</section>
 	<script src="js/Navigation_bar.js"></script>
 	<script src="js/Reviews.js"></script>
+	<script type="text/javascript">
+		function display() {
+    		var T = document.getElementById("contact");
+    		T.style.display = "block";  // <-- Set it to block
+		}
+	</script>
+
 </body>
 </html>
