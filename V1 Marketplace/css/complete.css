@@ -709,3 +709,74 @@ textarea {
 .review_header{
 	display: flex;
 }
+
+.edit_delete_reply{
+	position:fixed;
+    bottom:0px;
+	width:255px;
+	display: flex;
+	align-items:           center;
+}
+
+.reply{
+  height:                 30px;
+  width:                  80px;
+  background:             transparent;
+  border:                 1.5px solid #F2754A;
+  border-radius:          50px;
+  font-family:            "Poppins", sans-serif;
+  letter-spacing:         2px;
+  font-size:              15px;
+  color:                  #F2754A;
+  cursor:                 pointer;
+  transition:             0.2s;
+  margin: 5px;
+}
+
+.reply:hover{
+  background:             #F2754A;
+  border:                 1.5px solid #F2754A;
+  color:                  black;
+}
+
+.edit{
+  height:                 30px;
+  width:                  80px;
+  background:             transparent;
+  border:                 1.5px solid #F2754A;
+  border-radius:          50px;
+  font-family:            "Poppins", sans-serif;
+  letter-spacing:         2px;
+  font-size:              15px;
+  color:                  #F2754A;
+  cursor:                 pointer;
+  transition:             0.2s;
+  margin: 5px;
+}
+
+.edit:hover{
+  background:             black;
+  border:                 1.5px solid white;
+  color:                  white;
+}
+
+.delete{
+  height:                 30px;
+  width:                  80px;
+  background:             transparent;
+  border:                 1.5px solid #F2754A;
+  border-radius:          50px;
+  font-family:            "Poppins", sans-serif;
+  letter-spacing:         2px;
+  font-size:              15px;
+  color:                  #F2754A;
+  cursor:                 pointer;
+  transition:             0.2s;
+  margin: 5px;
+}
+
+.delete:hover{
+  background:             red;
+  border:                 1.5px solid red;
+  color:                  white;
+}
