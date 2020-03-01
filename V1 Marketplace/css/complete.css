@@ -608,8 +608,8 @@ textarea {
 .enter_sell{
   height:                 40px;
   width:                  150px;
-  text-align:center;
-  margin-top: 20px;
+  text-align:             center;
+  margin-top:             20px;
   background:             transparent;
   border:                 1.5px solid black;
   border-radius:          50px;
