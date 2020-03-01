@@ -184,6 +184,15 @@ body {
   width:                  75%;
 }
 
+.sell {
+  position:               relative;
+  float:                  flex;
+  top:                    75px;
+  left:                   0;
+  width:                  75%;
+  margin-left: 25%;
+}
+
 .reviews2 {
   position:               relative;
   float:                  right;
@@ -428,6 +437,18 @@ textarea {
   margin:                 30px auto;
   padding:                20px;
 }
+
+.sell_form {
+  position:               relative;
+  max-width:              400px;
+  margin:                 50px auto;
+  background: 			  white;
+  text-align:             center;
+  padding: 				  30px;
+  border-radius:          50px;
+  box-shadow:             5px 5px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
 .avatar-upload {
   position:               relative;
   max-width:              205px;
@@ -482,6 +503,21 @@ textarea {
   width:                  100%;
   height:                 100%;
   border-radius:          100%;
+  background-size:        cover;
+  background-repeat:      no-repeat;
+  background-position:    center;
+}
+
+.avatar-upload .avatar-preview2 {
+  width:                  192px;
+  height:                 192px;
+  position:               relative;
+  border:                 6px solid white;
+  box-shadow:             10px 10px 10px 0px rgba(0, 0, 0, 0.1);
+}
+.avatar-upload .avatar-preview2 > div {
+  width:                  100%;
+  height:                 100%;
   background-size:        cover;
   background-repeat:      no-repeat;
   background-position:    center;
@@ -564,6 +600,28 @@ textarea {
 }
 
 .enter_review:hover{
+  background:             #F2754A;
+  border:                 1.5px solid #F2754A;
+  color:                  black;
+}
+
+.enter_sell{
+  height:                 40px;
+  width:                  150px;
+  text-align:center;
+  margin-top: 20px;
+  background:             transparent;
+  border:                 1.5px solid black;
+  border-radius:          50px;
+  font-family:            "Poppins", sans-serif;
+  letter-spacing:         2px;
+  font-size:              30px;
+  color:                  black;
+  cursor:                 pointer;
+  transition:             0.2s;
+}
+
+.enter_sell:hover{
   background:             #F2754A;
   border:                 1.5px solid #F2754A;
   color:                  black;
