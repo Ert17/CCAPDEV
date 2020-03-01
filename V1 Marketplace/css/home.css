@@ -189,15 +189,6 @@ section {
   overflow-x:             auto;
 }
 
-.card {
-  flex:                   0 0 auto;
-  background-color:       orange;
-  width:                  350px;
-  height:                 500px;
-  padding:                20px;
-}
-
-
 /* THIRD PART */
 #thirdpart_homepage {
   background-color:       #900C35;
