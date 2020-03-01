@@ -22,7 +22,7 @@
 <body>
 	<div class="header">
 		<a href="home.html"><image width = "70px" height = "45.465px" src="navigation_logo.png" alt="logo" id="logo"></image></a>
-		<input type="text" placeholder="Search" id="searchbox2"/>
+		<input type="text" placeholder="Search" id="searchbox2" onkeyup="search()"/>
 		
 		<nav class="account">
 			<ul class="nav__list">
@@ -97,8 +97,8 @@
 			<span class="fa fa-star"></span></p><br>
 			<section class="item_section">
 				<font color="white">
-				<button id="btncontact" onclick="display()">
-				    Get Contact Information
+				<button id="btncontact" class = "btncontact" onclick="display()">
+				    Get Information
 				</button>
 				<div id="contact" style="display: none">
 				    <p><b> Quantity:</b> 1</p>
@@ -117,7 +117,7 @@
 					<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" ></label>
 					<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" ></label>
 					<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" ></label>
-					<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" "></label>
+					<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" ></label>
 					<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" ></label>
 				</fieldset>
 				<button id="submit_button" class = "enter_review">Submit</button>
@@ -132,7 +132,11 @@
 	<script type="text/javascript">
 		function display() {
     		var T = document.getElementById("contact");
+			if(T.style.display === "none"){
     		T.style.display = "block";  // <-- Set it to block
+			} else {
+				T.style.display = "none";
+			}
 		}
 	</script>
 
