@@ -701,3 +701,11 @@ textarea {
 ::-webkit-scrollbar:vertical {
     display:             none;
 }
+
+.review_name{
+	margin: 20px;
+}
+
+.review_header{
+	display: flex;
+}
