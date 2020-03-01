@@ -34,3 +34,10 @@ function readURL(input) {
 $("#imageUpload").change(function() {
 	readURL(this);
 });
+
+search = function(e) {
+	if (event.keyCode === 13) {
+	location.replace("browse.html");
+	}
+	return false;
+}
