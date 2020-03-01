@@ -356,6 +356,21 @@ body {
   cursor:                 pointer;
 }
 
+.close-delete {
+  position:               fixed;
+  top:                    0;
+  right:                  0;
+  font-size:              28px;
+  color:                  #aaaaaa;
+}
+
+.close-delete:hover,
+.close-delete: focus {
+  color:                  #000;
+  text-decoration:        none;
+  cursor:                 pointer;
+}
+
 .nav__list {
   list-style:             none;
   margin:                 0;
@@ -608,8 +623,8 @@ textarea {
 .enter_sell{
   height:                 40px;
   width:                  150px;
-  text-align:center;
-  margin-top: 20px;
+  text-align:             center;
+  margin-top:             20px;
   background:             transparent;
   border:                 1.5px solid black;
   border-radius:          50px;
