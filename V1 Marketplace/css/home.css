@@ -1,7 +1,5 @@
 * {
   list-style:             none;
-  text-decoration:        none;
-  object-position:        fixed;
   margin:                 0;
   padding:                0;
 }
@@ -159,44 +157,49 @@ header {
 }
 
 section {
-  padding-top:            5em;
+  display:                block;
 }
 
 /* FIRST PART */
 #firstpart_homepage {
-  background-color:       #F2B54A;
   height:                 100vh;
-  position:               relative;
   top:                    0;
-  left:                   0;
-  width:                  100%;
+}
+
+.bg-1, .bg-2 {
+  height:                 100px;
+  background-attachment:  fixed;
+  background-position:    center;
+  background-repeat:      no-repeat;
+  background-size:        cover;
+}
+
+.bg-1 {
+  background-image:       url('catalog.jpg');
+}
+
+.bg-2 {
+  background-image:       url('market.jpg');
+  min-height:             400px;
 }
 
 /* SECOND PART */
 #secondpart_homepage {
-  background-color:       #F2754A;
-  height:                 100vh;
-  position:               relative;
-  top:                    0;
-  left:                   0;
-  width:                  100%;
+  padding:                50px;             
+  background-color:       #FBB117;
 }
 
 .scrolling-wrapper {
   height:                 50%;
-  position:               static;
+  position:               relative;
   display:				        flex;
   overflow-x:             auto;
 }
 
 /* THIRD PART */
 #thirdpart_homepage {
-  background-color:       #900C35;
-  height:                 100vh;
-  position:               relative;
-  top:                    0;
-  left:                   0;
-  width:                  100%;
+  background-color:       #f4f4f4;
+  padding:                50px;
 }
 
 .row {
@@ -209,7 +212,6 @@ h2.heading {
   margin-top:             0;
   margin-bottom:          15px;
   text-shadow:            3px 3px black;
-  padding-top:100px;
 }
 
 .member {
@@ -220,7 +222,7 @@ h2.heading {
 .member img {
   width:                  225px;
   height:                 225px;
-  border:                 7px solid white;
+  border:                 7px solid #FBB117;
   border-radius: 		      225px;
   box-shadow: 			      0px 10px 10px rgba(0, 0, 0, 0.2);
   margin-bottom:          20px;
