@@ -185,7 +185,8 @@ section {
 
 /* SECOND PART */
 #secondpart_homepage {
-  padding:                50px;             
+  padding-top:            75px; 
+  padding-bottom:         75px;            
   background-color:       #FBB117;
 }
 
