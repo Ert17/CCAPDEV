@@ -1,0 +1,61 @@
+<header>
+	<nav class="main-nav">
+		<ul class="nav__list">
+			<li class="nav__list-item"><a href="#firstpart_homepage" class="nav__link">Home</a></li>
+			<li class="nav__list-item"><a href="#secondpart_homepage" class="nav__link">Top Rated Items</a></li>
+			<li class="nav__list-item"><a href="#thirdpart_homepage" class="nav__link">About Us</a></li>
+		</ul>
+	</nav>
+	<nav class="account">
+		<ul class="nav__list">
+			<li class="nav__list-item">
+				<a class="nav__link nav__link--btn myBtn" id="myBtn" href="#">Login</a>
+				<div id="myModal" class="modal">
+					<div id = "login" class="modal-content animated bounceInDown">
+						<span class="close">&times;</span>
+						<p class = "modal_title"><font size = "5">LOGIN</font></p><br><br>
+						<form align = "center">
+							<label for="username">Username:</label>
+							<input type="text" id="username" name="username" ><br><br>
+							<label for="password">Password:</label>
+							<input type="password" id="password" name="password"><br><br><br>
+							<a class="nav__link nav__link--btn" href="#">Login</a>
+						</form> 
+					</div>
+				</div>
+			</li>
+			<li class="nav__list-item">
+				<a onclick="document.getElementById('id02').style.display='inline'" class="nav__link nav__link--btn nav__link--btn--highlight" href="#">Register</a>
+				<div id="id02" class="modal">
+					<div id="register" class="modal-content animated bounceInDown">
+						<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
+						<p class = "modal_title"><font size = "5">REGISTER</font></p><br>
+						
+						<div class="avatar-upload">
+							<div class="avatar-edit">
+								<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+								<label for="imageUpload"></label>
+							</div>
+							<div class="avatar-preview">
+								<div id="imagePreview" style="background-image: url(dpic.jpg);">
+								</div>
+							</div>
+						</div>
+						
+						<form align = "center">
+							<label for="username">Username:</label>
+							<input type="text" id="username" name="username" ><br><br>
+							<label for="password">Password:</label>
+							<input type="password" id="password" name="password"><br><br>
+							<label for="cpassword">Confirm Password:</label>
+							<input type="password" id="cpassword" name="cpassword"><br><br>
+							<p>Short description about you</p><br>
+							<textarea id="description" rows="3" cols="35"></textarea><br><br>
+							<a class="nav__link nav__link--btn" href="#">Register</a>
+						</form> 
+					</div>
+				</div>
+			</li>
+		</ul>
+	</nav>
+</header>
