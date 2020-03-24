@@ -1,4 +1,4 @@
-<!-- MAIN LAYOUT: Required to be in views/layouts/main.hbs -->
+<!-- MAIN LAYOUT: in views/layouts/main.hbs -->
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -22,7 +22,7 @@
   </head>
 
   <body>
-    {{> nav}} <!-- This is a partial, we use > right after the opening mustache to denote it's a partial -->
+    {{> header}} <!-- This is a partial, we use > right after the opening mustache to denote it's a partial -->
 
     <div class="container">
       {{{ body }}} <!-- THIS IS REQUIRED, body is a keyword. Notice it's 3 mustaches, not just 2. To escape HTML tags -->
