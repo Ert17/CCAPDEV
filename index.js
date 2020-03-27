@@ -4,6 +4,8 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const handlebars = require('handlebars');
 
+const routes = require('.routes/routes.js')
+
 // Creates the express application
 const app = express();
 const port = 9090;
@@ -34,23 +36,9 @@ app.engine( 'hbs', exphbs({
 // Setting the view engine to the express-handlebars engine we created
 app.set('view engine', 'hbs');
 
-app.get('/', function (req,res) {
-	res.render('/home')
-}, )
-
-app.get('/browse', function (req,res) {
-  res.render('/browse')
-})
-
-app.get('/item', function (req,res) {
-  res.render('/item')
-})
-
-app.get('/profile', function (req,res) {
-  res.render('/profile')
-})
-
 app.use(express.static('public'));
+
+app.use('/', routes);
 
 app.listen(port, function () {
 	console.log('App listening at port ' + port)
