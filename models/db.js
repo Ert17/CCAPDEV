@@ -1,6 +1,6 @@
 
 // import module mongodb
-const mongodb = require ('monogdb');
+const mongodb = require ('mongodb');
 
 // MONGODB Client
 const client = mongodb.MongoClient;
@@ -16,16 +16,16 @@ const options = { useUnifiedTopology: true};
 const database = {
 
 	// creates a database
-	function createDatabase () {
+	createDatabase: function () {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			console.log('Database created.')
 			db.close();
 		});
-	}
+	},
 
 	// creates a collection in the database
-	function createCollection (collection) {
+	createCollection: function (collection) {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			var database = db.db(dbName);
@@ -35,10 +35,10 @@ const database = {
 				db.close();
 			});
 		});
-	}
+	},
 
 	// inserts one document in a given collection
-	function insertOne (collection, doc) {
+	insertOne: function (collection, doc) {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			var database = db.db(dbName);
@@ -48,10 +48,10 @@ const database = {
 				db.close();
 			});
 		});
-	}
+	},
 
 	// inserts multiple documents (array of doc) in a given collection
-	function insertMany (collection, docs) {
+	insertMany: function (collection, docs) {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			var database = db.db(dbName);
@@ -61,11 +61,11 @@ const database = {
 				db.close();
 			});
 		});
-	}
+	},
 
 	// finds a document in a given collection based on query
 	// performs callback function after find function
-	function findOne (collection, query, callback) {
+	findOne: function (collection, query, callback) {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			var database = db.db(dbName);
@@ -76,7 +76,7 @@ const database = {
 				return callback(result);
 			});
 		});
-	}
+	},
 
 	// finds an array of document in a given collection based on query
 	// performs callback function after find function
@@ -94,7 +94,7 @@ const database = {
     },
 
     // deletes a document from a given collection based on filter
-	function deleteOne (collection, filter) {
+	deleteOne: function (collection, filter) {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			var database = db.db(dbName);
@@ -104,10 +104,10 @@ const database = {
 				db.close();
 			});
 		});
-	}
+	},
 
 	// deletes an array of documents from a given collection based on filter
-	function deleteMany (collection, filter) {
+	deleteMany: function (collection, filter) {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			var database = db.db(dbName);
@@ -117,10 +117,10 @@ const database = {
 				db.close();
 			});
 		});
-	}
+	},
 
 	// drops a collection
-	function dropCollection (collection) {
+	dropCollection: function (collection) {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			var database = db.db(dbName);
@@ -130,10 +130,10 @@ const database = {
 				db.close();
 			});
 		});
-	}
+	},
 
 	// updates a value of an object of a document in the given collection
-	function updateOne (collection, filter, update) {
+	updateOne: function (collection, filter, update) {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			var database = db.db(dbName);
@@ -144,10 +144,10 @@ const database = {
 				db.close();
 			});
 		});
-	}
+	},
 
 	// updates a value of an object of multiple documents in the given collection
-	function updateMany (collection, filter, update) {
+	updateMany: function (collection, filter, update) {
 		client.connect(url, options, function(err, db) {
 			if (err) throw err;
 			var database = db.db(dbName);

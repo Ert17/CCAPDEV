@@ -4,7 +4,7 @@ const path = require('path');
 const exphbs = require('express-handlebars');
 const handlebars = require('handlebars');
 
-const routes = require('.routes/routes.js')
+const routes = require('./routes/routes.js');
 
 // Creates the express application
 const app = express();
@@ -41,5 +41,5 @@ app.use(express.static('public'));
 app.use('/', routes);
 
 app.listen(port, function () {
-	console.log('App listening at port ' + port)
-})
+	console.log('App listening at port ' + port);
+});

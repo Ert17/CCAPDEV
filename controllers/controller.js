@@ -7,15 +7,15 @@ const controller = {
 
 	getHome: function (req, res) {
 		res.render('/home');
-	}
+	},
 
 	getBrowse: function (req, res) {
 		res.render('/browse');
-	}
+	},
 
     getItem: function (req, res) {
 		res.render('/item');
-	}
+	},
 
     // executed when the client sends an HTTP GET request `/:username`
     // as defined in `../routes/routes.js`

@@ -13,6 +13,7 @@ db.createDatabase();
 var user = {
     fName: 'Gabriel',
     lName: 'Olan',
+    pw: '1234',
     username: 'Oninolan',
     bio: 'Hi! My name is Olan and I love selling things!'
 };
@@ -25,6 +26,7 @@ db.insertOne(collection, user);
 var user = {
     fName: 'Earth',
     lName: 'Lopez',
+    pw: '4321',
     username: 'Lop3arth',
     bio: 'My name is Earth! Welcome to my store!'
 };
@@ -37,6 +39,7 @@ db.insertOne(collection, user);
 var user = {
     fName: 'Manny',
     lName: 'Pacquiao',
+    pw: '1234',
     username: 'MannyP',
     bio: 'The people\'s champ and Philippine senator',
 };
@@ -49,6 +52,7 @@ db.insertOne(collection, user);
 var user = {
     fName: 'Greta',
     lName: 'Thunberg',
+    pw: '4321',
     username: 'LordHandStark',
     bio: 'Environmentalist and dog lover'
 };
@@ -61,6 +65,7 @@ db.insertOne(collection, user);
 var user = {
     fName: 'Taylor',
     lName: 'Swift',
+    pw: '1234',
     username: 'Tswift',
     bio: 'Artist of the decade and mother of meredith'
 };
