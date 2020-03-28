@@ -6,15 +6,15 @@ const db = require('../models/db.js');
 const controller = {
 
 	getHome: function (req, res) {
-		res.render('/home');
+		res.render('home', {layout: 'home.hbs'});
 	},
 
 	getBrowse: function (req, res) {
-		res.render('/browse');
+		res.render('browse');
 	},
 
     getItem: function (req, res) {
-		res.render('/item');
+		res.render('item');
 	},
 
     // executed when the client sends an HTTP GET request `/:username`
