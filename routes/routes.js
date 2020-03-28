@@ -16,7 +16,7 @@ app.get('/browse', controller.getBrowse);
 
 // execute function getItem() as defined in object controller in `../controllers/controller.js`
 // when a client sends an HTTP GET request for `/:username` where `username` is a parameter ~~ or ano ba dapat
-app.get('/item', controller.getItem);
+app.get('/:iName', controller.getItem);
 
 // execute function getProfile() as defined in object controller in `../controllers/controller.js`
 // when a client sends an HTTP GET request for `/:username` where `username` is a parameter

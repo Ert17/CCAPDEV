@@ -14,7 +14,22 @@ const controller = {
 	},
 
     getItem: function (req, res) {
-		res.render('item');
+		
+        // gets the parameter `username` from the URL
+        var i = req.params.iName;
+
+        // creates an object `query` which assigns the value of the variable `u` to field `username`
+        var query = {iName: i};
+
+        // calls the function findOne() defined in the `database` object in `../models/db.js`
+        // this function searches the collection `profiles` based on the value set in object `query`
+        // the third parameter is a callback function
+        // this called when the database returns a value saved in variable `result`
+        db.findOne('items', query, function (result) {
+
+            // renders `../views/profile.hbs` with the values in variable `results`
+            res.render('item', result);
+        });
 	},
 
     // executed when the client sends an HTTP GET request `/:username`
