@@ -4,11 +4,17 @@ const express = require('express');
 // import module routes from `../controllers/controller.js`
 const controller = require('../controllers/controller.js')
 
+// import module routes from `../controllers/signupController.js`
+const signupController = require('../controllers/signupController.js')
+
 const app = express();
 
 // execute function getHome() as defined in object controller in `../controllers/controller.js`
 // when a client sends an HTTP GET request for '/'
 app.get('/', controller.getHome);
+
+// when a client sends an HTTP POST request for `/signup`
+app.post('/', signupController.postSignUp);
 
 // execute function getBrowse() as defined in object controller in `../controllers/controller.js`
 // when a client sends an HTTP GET request for `/browse'
