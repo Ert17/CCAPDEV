@@ -5,6 +5,19 @@ var btn = document.getElementById("myBtn");
 
 var span = document.getElementsByClassName("close")[0];
 
+// var btncontact = document.getElementById("btncontact");
+
+// btncontact.onlick = function() {
+// 	var T = document.getElementById("contact");
+	
+// 	if(T.style.display === "none"){
+// 	T.style.display = "block";  // <-- Set it to block
+// 	} 
+// 	else {
+// 		T.style.display = "none";
+// 	}
+// }
+
 btn.onclick = function() {
   modal.style.display = "block";
 }
