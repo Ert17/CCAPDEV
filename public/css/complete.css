@@ -254,7 +254,7 @@ body {
 
 ::placeholder {
   font-family:            Helvetica;
-  font-size:              25px;
+  font-size:              15px;
   vertical-align:         middle;
 }
 
@@ -423,6 +423,7 @@ body {
   background:             var(--text);
   color:                  var(--text-inverse);
   border-color:           var(--text);
+  cursor: pointer;
 }
 
 .nav__link--btn::after {
@@ -467,7 +468,7 @@ textarea {
 .avatar-upload {
   position:               relative;
   max-width:              205px;
-  margin:                 50px auto;
+  margin:                 10px auto;
 }
 .avatar-upload .avatar-edit {
   position:               absolute;
