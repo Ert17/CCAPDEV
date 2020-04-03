@@ -1,11 +1,11 @@
 <div class="header">
-			<a href="home.html"><image width = "70px" height = "45.465px" src="img/navigation_logo.png" alt="logo" id="logo"></image></a>
+			<a href="/"><image width = "70px" height = "45.465px" src="img/navigation_logo.png" alt="logo" id="logo"></image></a>
 			<input type="text" placeholder="Search" id="searchbox2" onkeyup="search()"/>
 			
 			<nav class="account">
 				<ul class="nav__list">
 					<li class="nav__list-item">
-						<a class="nav__link nav__link--btn myBtn" id="myBtn" href="#">Login</a>
+						<a onclick="document.getElementById('myModal').style.display='inline'" class="nav__link nav__link--btn myBtn" id = "myBtn">Login</a>
 						<div id="myModal" class="modal">
 							<div id = "login" class="modal-content animated bounceInDown">
 								<span class="close">&times;</span>
@@ -15,13 +15,14 @@
 									<input type="text" id="username" name="username" ><br><br>
 									<label for="password">Password:</label>
 									<input type="password" id="password" name="password"><br><br><br>
-									<a class="nav__link nav__link--btn" href="#">Login</a>
+									<input class="nav__link nav__link--btn" type="submit" id="login" value="Login">
 								</form> 
+								<p id="error"></p>
 							</div>
 						</div>
 					</li>
 					<li class="nav__list-item">
-						<a onclick="document.getElementById('id02').style.display='inline'" class="nav__link nav__link--btn nav__link--btn--highlight" href="#">Register</a>
+						<a onclick="document.getElementById('id02').style.display='inline'" class="nav__link nav__link--btn nav__link--btn--highlight">Register</a>
 						<div id="id02" class="modal">
 							<div id="register" class="modal-content animated bounceInDown">
 								<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
@@ -30,7 +31,7 @@
 								<form align = "center" id = "signup" method = "post">
 									<div class="avatar-upload">
 										<div class="avatar-edit">
-											<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+											<input type='file' id="photo" name="photo" accept="image/*" />
 											<label for="imageUpload"></label>
 										</div>
 										<div class="avatar-preview">
@@ -46,7 +47,7 @@
 									<p>Short description about you</p><br>
 									<textarea id="description" rows="3" cols="35"></textarea><br><br>
 									<p id="error"></p>
-									<a class="nav__link nav__link--btn" id="register">Register</a>
+									<input class="nav__link nav__link--btn" type="submit" id="register" value="Register">
 								</form> 
 							</div>
 						</div>

@@ -37,7 +37,7 @@ $("#imageUpload").change(function() {
 
 search = function(e) {
 	if (event.keyCode === 13) {
-	location.replace("browse.html");
+	location.replace("browse");
 	}
 	return false;
 }

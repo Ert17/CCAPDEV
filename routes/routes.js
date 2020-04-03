@@ -1,33 +1,32 @@
-// import module `express`
+
 const express = require('express');
 
-// import module routes from `../controllers/controller.js`
 const controller = require('../controllers/controller.js')
-
-// import module routes from `../controllers/signupController.js`
 const signupController = require('../controllers/signupController.js')
+
+const multer = require('multer');
+const storage = multer.diskStorage({
+	destination: function(req, file, cb) {
+		cb(null, './public/img/')
+	},
+	filename: function(req, file, cb) {
+		cb(null, file.originalname)
+	}
+});
+
+const upload = multer({storage: storage});
 
 const app = express();
 
-// execute function getHome() as defined in object controller in `../controllers/controller.js`
-// when a client sends an HTTP GET request for '/'
 app.get('/', controller.getHome);
 
-// when a client sends an HTTP POST request for `/signup`
 app.post('/', signupController.postSignUp);
 
-// execute function getBrowse() as defined in object controller in `../controllers/controller.js`
-// when a client sends an HTTP GET request for `/browse'
-app.get('/browse', controller.getBrowse);
+app.get('/browse/:query', controller.getBrowse);
 
-// execute function getItem() as defined in object controller in `../controllers/controller.js`
-// when a client sends an HTTP GET request for `/:username` where `username` is a parameter ~~ or ano ba dapat
-app.get('/:iName', controller.getItem);
+app.get('/item/:iName', controller.getItem);
 
-// execute function getProfile() as defined in object controller in `../controllers/controller.js`
-// when a client sends an HTTP GET request for `/:username` where `username` is a parameter
-app.get('/:username', controller.getProfile);
-
+app.get('/profile/:username', controller.getProfile);
 
 // exports the object `app` (defined above) when another script exports from this file
 module.exports = app;

@@ -1,8 +1,9 @@
-// All imports needed here
+
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const handlebars = require('handlebars');
+const db = require('./models/db.js');
 
 const routes = require('./routes/routes.js');
 
@@ -39,6 +40,8 @@ app.set('view engine', 'hbs');
 app.use(express.static('public'));
 
 app.use('/', routes);
+
+db.connect();
 
 app.listen(port, function () {
 	console.log('App listening at port ' + port);
