@@ -13,24 +13,22 @@ const controller = {
 	},
 
     getSearch: function (req, res) {
-        var s = req.params.search;
 
-        var query = {iName: s};
+        var query = {iName: req.param.query};
 
         db.findMany(Item, query, function (result) {
 
-            // renders `../views/profile.hbs` with the values in variable `results`
-            res.redirect('/browse/', + s );
+            res.send(req.param);
         });
     },
 
 	getBrowse: function (req, res) {
-        res.render('browse', result);
+        res.render('browse');
 	},
 
     getItem: function (req, res) {
 		
-        var i = req.params.iName;
+        var i = req.param.iName;
 
         var query = {iName: i};
 
@@ -41,7 +39,7 @@ const controller = {
 
     getUser: function (req, res) {
 
-        var query = {username: req.query.username};
+        var query = {username: req.param.username};
 
         var projection = 'fName lName username bio photo';
 
