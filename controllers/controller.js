@@ -1,8 +1,11 @@
-// import module from `../models/db.js`
+
 const db = require('../models/db.js');
 
-// defines an object which contains functions executed as callback when
-// a client requests for a certain path in the server
+const User = require('../models/UserModel.js');
+const Item = require('../models/ItemModel.js');
+const Request = require('../models/RequestModel.js');
+const Review = require('../models/ReviewModel.js');
+
 const controller = {
 
 	getHome: function (req, res) {
@@ -14,7 +17,7 @@ const controller = {
 
         var query = {iName: s};
 
-        db.findMany('profiles', query, function (result) {
+        db.findMany(Item, query, function (result) {
 
             // renders `../views/profile.hbs` with the values in variable `results`
             res.redirect('/browse/', + s );
@@ -31,18 +34,16 @@ const controller = {
 
         var query = {iName: i};
 
-        db.findOne('items', query, function (result) {
+        db.findOne(Item, query, function (result) {
             res.render('item', result);
         });
 	},
 
-    getProfile: function (req, res) {
+    getUser: function (req, res) {
 
-        var u = req.params.username;
+        var query = {username: req.params.username};
 
-        var query = {username: u};
-
-        db.findOne('profiles', query, function (result) {
+        db.findOne(User, query, function (result) {
 
             res.render('profile', result);
         });

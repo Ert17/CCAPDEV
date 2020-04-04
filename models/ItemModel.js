@@ -10,11 +10,11 @@ var ItemSchema = new mongoose.Schema ({
 		required: true
 	},
 	price : {
-		type: int,
+		type: Number,
 		required: true
 	},
 	quantity : {
-		type: int,
+		type: Number,
 		required: true
 	},
 	bio : {
@@ -30,7 +30,7 @@ var ItemSchema = new mongoose.Schema ({
 		required: true
 	},
 	contact : {
-		type: int,
+		type: Number,
 		required: true
 	},
 	photo : {

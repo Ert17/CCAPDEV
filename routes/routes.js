@@ -20,13 +20,13 @@ const app = express();
 
 app.get('/', controller.getHome);
 
-app.post('/', signupController.postSignUp);
+app.post('/', upload.single('photo'), signupController.postSignUp);
 
 app.get('/browse/:query', controller.getBrowse);
 
 app.get('/item/:iName', controller.getItem);
 
-app.get('/profile/:username', controller.getProfile);
+app.get('/user/:username', controller.getUser);
 
 // exports the object `app` (defined above) when another script exports from this file
 module.exports = app;

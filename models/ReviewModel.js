@@ -10,7 +10,7 @@ var ReviewSchema = new mongoose.Schema ({
 		required: false
 	},
 	reviewType : {
-		type: String[],
+		type: String,
 		required: true
 	},
 	reviewer : {

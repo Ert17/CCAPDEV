@@ -12,13 +12,7 @@ const signupController = {
         var username = req.body.username;
         var pw = req.body.pw;
         var bio= req.body.bio;
-
-        var img = fs.readFileSync(req.file.path);
-        var encode_image = img.toString('base64');
-        var photo = {
-            contentType: req.file.mimetype,
-            image:  new Buffer(encode_image, 'base64')
-        }
+        var photo = req.body.photo;
 
         db.insertOne(User, {
             fName: fName,

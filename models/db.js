@@ -23,26 +23,26 @@ const database = {
         });
     },
 
-	createDatabase: function () {
-		mongoose.connect(url, options, function(err, db) {
-			if (err) throw err;
-			console.log('Database created.')
-			db.close();
-		});
-	},
+	// createDatabase: function () {
+	// 	mongoose.connect(url, options, function(err, db) {
+	// 		if (err) throw err;
+	// 		console.log('Database created.')
+	// 		db.close();
+	// 	});
+	// },
 
-	// creates a collection in the database
-	createCollection: function (collection) {
-		client.connect(url, options, function(err, db) {
-			if (err) throw err;
-			var database = db.db(dbName);
-			database.createCollection(collection, function(err, res) {
-				if (err) throw err;
-				console.log('Collection ' + collection + ' created.');
-				db.close();
-			});
-		});
-	},
+	// // creates a collection in the database
+	// createCollection: function (collection) {
+	// 	mongoose.connect(url, options, function(err, db) {
+	// 		if (err) throw err;
+	// 		var database = db.db(dbName);
+	// 		database.createCollection(collection, function(err, res) {
+	// 			if (err) throw err;
+	// 			console.log('Collection ' + collection + ' created.');
+	// 			db.close();
+	// 		});
+	// 	});
+	// },
 
 	insertOne: function(model, doc) {
         model.create(doc, function(error, result) {
@@ -101,5 +101,4 @@ const database = {
     }
 }
 
-// exports the object `database` (defined above) when another script exports from this file
 module.exports = database;
