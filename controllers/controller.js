@@ -41,11 +41,21 @@ const controller = {
 
     getUser: function (req, res) {
 
-        var query = {username: req.params.username};
+        var query = {username: req.query.username};
+
+        var projection = 'fName lName username bio photo';
 
         db.findOne(User, query, function (result) {
 
-            res.render('profile', result);
+            if(result != null) {
+                var details = {
+                    fName: result.fName,
+                    lName: result.lName,
+                    username: result.username
+                };
+
+                res.render('profile', details);
+            }
         });
     }
 }
