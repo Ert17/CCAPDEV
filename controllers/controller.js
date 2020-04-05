@@ -28,7 +28,7 @@ const controller = {
 
     getItem: function (req, res) {
 		
-        var i = req.param.iName;
+        var i = req.params.iName;
 
         var query = {iName: i};
 
@@ -39,7 +39,7 @@ const controller = {
 
     getUser: function (req, res) {
 
-        var query = {username: req.param.username};
+        var query = {username: req.params.username};
 
         var projection = 'fName lName username bio photo';
 
