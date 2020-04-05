@@ -5,11 +5,11 @@
 		{{#each items}}
 			<a href="item">
 				<div class="card" align="left">
-					<image src="items_samples/20200228_223406.jpg" height="192px" width="192px"><br>
-					<p class="item_description">Nintendo Switch</p>
-					<p class="item_description">₱ 15,000</p>
+					<image src={{this.photo}} height="192px" width="192px"><br>
+					<p class="item_description">{{this.iName}}</p>
+					<p class="item_description">₱ {{this.price}}</p>
 				</div>
 			</a>
-		{{\each}}
+		{{/each}}
 	</div>
 </section>
