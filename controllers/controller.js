@@ -27,13 +27,28 @@ const controller = {
 	},
 
     getItem: function (req, res) {
-		
-        var i = req.params.iName;
 
-        var query = {iName: i};
+        var query = {iName: req.params.iName};
 
-        db.findOne(Item, query, function (result) {
-            res.render('item', result);
+        var projection = 'iName seller price quantity bio MOD meet_location contact photo';
+
+        db.findOne(Item, query, projection, function (result) {
+
+            if(result != null) {
+                var details = {
+                    iName: result.iName,    
+                    seller: result.seller,
+                    price: result.price,
+                    quantity: result.quantity,
+                    bio: result.bio,
+                    MOD: result.MOD,
+                    meet_location: result.meet_location,
+                    contact: result.contact,
+                    photo: result.photo,
+                };
+
+                res.render('item', details);
+            }
         });
 	},
 
