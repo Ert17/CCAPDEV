@@ -7,7 +7,7 @@ const handlebars = require('handlebars');
 
 const multer = require('multer');
 
-const bp = require('body-parser');
+const bodyParser = require('body-parser');
 
 const routes = require('./routes/routes.js');
 
@@ -36,15 +36,13 @@ app.engine( 'hbs', exphbs({
   }
 }));
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
 app.set('view engine', 'hbs');
 
 app.use(express.static(__dirname + '/public'));
 
 app.use('/', routes);
-
-app.use(bp.json());
-
-app.use(express.urlencoded({extended: true}));
 
 db.connect();
 

@@ -43,13 +43,15 @@ const controller = {
 
         var projection = 'fName lName username bio photo';
 
-        db.findOne(User, query, function (result) {
+        db.findOne(User, query, projection, function (result) {
 
             if(result != null) {
                 var details = {
-                    fName: result.fName,
+                    fName: result.fName,    
                     lName: result.lName,
-                    username: result.username
+                    username: result.username,
+                    bio: result.bio,
+                    photo: result.photo
                 };
 
                 res.render('profile', details);

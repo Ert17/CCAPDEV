@@ -28,7 +28,7 @@ app.get('/browse', controller.getBrowse);
 
 app.get('/item/:iName', controller.getItem);
 
-app.get('/user/:userName', controller.getUser);
+app.get('/user/:username', controller.getUser);
 
 // exports the object `app` (defined above) when another script exports from this file
 module.exports = app;

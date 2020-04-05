@@ -23,7 +23,7 @@ const signupController = {
             photo: photo
         });
 
-        res.redirect('/profile/' + username);
+        res.redirect('/user/' + username);
     },
 
     getCheckusername: function (req, res) {
