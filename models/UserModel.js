@@ -19,7 +19,7 @@ var UserSchema = new mongoose.Schema ({
 	},
 	bio : {
 		type: String,
-		required: false
+		required: true
 	},
 	photo : {
 		type: String
