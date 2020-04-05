@@ -6,6 +6,8 @@ const User = require('../models/UserModel.js');
 const signupController = {
 
     postSignUp: function (req, res) {
+        if (req.body.photo == '')
+            req.body.photo = 'img/dpic.jpg';
 
         var user = {
             fName : req.body.fName,

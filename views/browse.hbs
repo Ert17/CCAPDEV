@@ -1,11 +1,11 @@
 <section class="main-1 animated bounceInDown">
-	<p><font color = "white">Search results for:<b>"<span class="searching"></span>"</b></font></p>
+	<p><font color = "white">Search results for:<b>"<span class="searching">{{this.query}}</span>"</b></font></p>
 	<br>
 	<div class="posts-1" style="height: 296px;">
 		{{#each items}}
-			<a href="item">
+			<a href="/item/{{this.iName}}">
 				<div class="card" align="left">
-					<image src={{this.photo}} height="192px" width="192px"><br>
+					<image src=/{{this.photo}} height="192px" width="192px"><br>
 					<p class="item_description">{{this.iName}}</p>
 					<p class="item_description">₱ {{this.price}}</p>
 				</div>

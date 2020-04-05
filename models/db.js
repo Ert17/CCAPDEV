@@ -23,27 +23,6 @@ const database = {
         });
     },
 
-	// createDatabase: function () {
-	// 	mongoose.connect(url, options, function(err, db) {
-	// 		if (err) throw err;
-	// 		console.log('Database created.')
-	// 		db.close();
-	// 	});
-	// },
-
-	// // creates a collection in the database
-	// createCollection: function (collection) {
-	// 	mongoose.connect(url, options, function(err, db) {
-	// 		if (err) throw err;
-	// 		var database = db.db(dbName);
-	// 		database.createCollection(collection, function(err, res) {
-	// 			if (err) throw err;
-	// 			console.log('Collection ' + collection + ' created.');
-	// 			db.close();
-	// 		});
-	// 	});
-	// },
-
 	insertOne: function(model, doc) {
         model.create(doc, function(error, result) {
             if(error) throw error;

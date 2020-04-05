@@ -14,11 +14,21 @@ const controller = {
 
     getSearch: function (req, res) {
 
-        var query = {iName: req.param.query};
+        var query = {seller: req.params.query};
 
-        db.findMany(Item, query, function (result) {
+        var projection = 'photo iName price';
 
-            res.send(req.param);
+        db.findMany(Item, query, projection, function (results) {
+
+            if(results != null) {
+                var items = results;
+
+                res.render('browse', 
+                    {
+                        query: req.params.query,
+                        items: results.map(results => results.toJSON())
+                    });
+            }
         });
     },
 
@@ -59,6 +69,13 @@ const controller = {
         var projection = 'fName lName username bio photo';
 
         db.findOne(User, query, projection, function (result) {
+            // db.findMany(Item, query, projection, function (Iresult) {
+            //     res.render('profile',
+            //         {
+            //             username: req.params.username,
+
+            //         }
+            // })
 
             if(result != null) {
                 var details = {
