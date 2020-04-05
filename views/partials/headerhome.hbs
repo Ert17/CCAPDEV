@@ -35,7 +35,7 @@
 						<form align="center" id="signup" method="post">
 							<div class="avatar-upload">
 								<div class="avatar-edit">
-									<input type='file' id="photo" name="photo" accept="image/*" />
+									<input type='file' id="imageUpload" name ="photo" accept=".png, .jpg, .jpeg" />
 									<label for="imageUpload"></label>
 								</div>
 								<div class="avatar-preview">
@@ -49,7 +49,7 @@
 							<input type="password" id="pw" name="pw" placeholder = "Password" required><br><br>
 							<input type="password" id="cpw" name="cpw" placeholder = "Confirm Password:" required><br><br>
 							<p>Short description about you</p><br>
-							<textarea id="description" rows="3" cols="35"></textarea><br><br>
+							<textarea type="text" id="bio" name="bio" rows="3" cols="35"></textarea><br><br>
 							<input class="nav__link nav__link--btn" type="submit" id="register" value="Register">
 						</form> 
 						<p id="error"></p>
