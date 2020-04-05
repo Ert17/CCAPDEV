@@ -18,7 +18,7 @@ const signupController = {
 
         db.insertOne(User, user);
 
-        res.render('profile', user);
+        res.redirect('/user/' +  user.username);
     },
 
     getCheckusername: function (req, res) {
