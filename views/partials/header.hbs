@@ -1,57 +1,57 @@
 <div class="header">
-			<a href="/"><image width = "70px" height = "45.465px" src="img/navigation_logo.png" alt="logo" id="logo"></image></a>
-			<input type="text" placeholder="Search" id="searchbox2" onkeyup="search()"/>
-			
-			<nav class="account">
-				<ul class="nav__list">
-					<li class="nav__list-item">
-						<a onclick="document.getElementById('myModal').style.display='inline'" class="nav__link nav__link--btn myBtn" id = "myBtn">Login</a>
-						<div id="myModal" class="modal">
-							<div id = "login" class="modal-content animated bounceInDown">
-								<span class="close">&times;</span>
-								<p class = "modal_title"><font size = "5">LOGIN</font></p><br><br>
-								<form align = "center" id = "login" method = "post">
-									<label for="username">Username:</label>
-									<input type="text" id="username" name="username" ><br><br>
-									<label for="password">Password:</label>
-									<input type="password" id="password" name="password"><br><br><br>
-									<input class="nav__link nav__link--btn" type="submit" id="login" value="Login">
-								</form> 
-								<p id="error"></p>
-							</div>
-						</div>
-					</li>
-					<li class="nav__list-item">
-						<a onclick="document.getElementById('id02').style.display='inline'" class="nav__link nav__link--btn nav__link--btn--highlight">Register</a>
-						<div id="id02" class="modal">
-							<div id="register" class="modal-content animated bounceInDown">
-								<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
-								<p class = "modal_title"><font size = "5">REGISTER</font></p><br>
-								
-								<form align = "center" id = "signup" method = "post">
-									<div class="avatar-upload">
-										<div class="avatar-edit">
-											<input type='file' id="photo" name="photo" accept="image/*" />
-											<label for="imageUpload"></label>
-										</div>
-										<div class="avatar-preview">
-											<div id="imagePreview" style="background-image: url(img/dpic.jpg);">
-											</div>
-										</div>
+	<a href="/"><image width = "70px" height = "45.465px" src="img/navigation_logo.png" alt="logo" id="logo"></image></a>
+	<input type="text" placeholder="Search" id="searchbox2" onkeyup="search()"/>
+	
+	<nav class="account">
+		<ul class="nav__list">
+			<li class="nav__list-item">
+				<a onclick="document.getElementById('myModal').style.display='inline'" class="nav__link nav__link--btn myBtn" id = "myBtn">Login</a>
+				<div id="myModal" class="modal">
+					<div id = "login" class="modal-content animated bounceInDown">
+						<span class="close">&times;</span>
+						<p class = "modal_title"><font size = "5">LOGIN</font></p><br><br>
+						<form align = "center" id = "login" method = "post">
+							<label for="username">Username:</label>
+							<input type="text" id="username" name="username" ><br><br>
+							<label for="password">Password:</label>
+							<input type="password" id="password" name="password"><br><br><br>
+							<input class="nav__link nav__link--btn" type="submit" id="login" value="Login">
+						</form> 
+						<p id="error"></p>
+					</div>
+				</div>
+			</li>
+			<li class="nav__list-item">
+				<a onclick="document.getElementById('id02').style.display='inline'" class="nav__link nav__link--btn nav__link--btn--highlight">Register</a>
+				<div id="id02" class="modal">
+					<div id="register" class="modal-content animated bounceInDown">
+						<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
+						<p class = "modal_title"><font size = "5">REGISTER</font></p><br>
+						
+						<form align="center" id="signup" method="post">
+							<div class="avatar-upload">
+								<div class="avatar-edit">
+									<input type='file' id="photo" name="photo" accept="image/*" />
+									<label for="imageUpload"></label>
+								</div>
+								<div class="avatar-preview">
+									<div id="imagePreview" style="background-image: url(img/dpic.jpg);">
 									</div>
-									<input type="text" id="fName" name="fName" placeholder = "First Name" required><br><br>
-									<input type="text" id="lName" name="lName" placeholder = "Last Name" required><br><br>
-									<input type="text" id="username" name="username" placeholder = "Username" required><br><br>
-									<input type="password" id="pw" name="pw" placeholder = "Password" required><br><br>
-									<input type="password" id="cpw" name="cpw" placeholder = "Confirm Password:" required><br><br>
-									<p>Short description about you</p><br>
-									<textarea id="description" rows="3" cols="35"></textarea><br><br>
-									<p id="error"></p>
-									<input class="nav__link nav__link--btn" type="submit" id="register" value="Register">
-								</form> 
+								</div>
 							</div>
-						</div>
-					</li>
-				</ul>
-			</nav>
-		</div>
+							<input type="text" id="fName" name="fName" placeholder = "First Name" required><br><br>
+							<input type="text" id="lName" name="lName" placeholder = "Last Name" required><br><br>
+							<input type="text" id="username" name="username" placeholder = "Username" required><br><br>
+							<input type="password" id="pw" name="pw" placeholder = "Password" required><br><br>
+							<input type="password" id="cpw" name="cpw" placeholder = "Confirm Password:" required><br><br>
+							<p>Short description about you</p><br>
+							<textarea id="description" rows="3" cols="35"></textarea><br><br>
+							<input class="nav__link nav__link--btn" type="submit" id="register" value="Register">
+						</form>
+						<p id="error"></p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</nav>
+</div>

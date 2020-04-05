@@ -7,23 +7,18 @@ const signupController = {
 
     postSignUp: function (req, res) {
 
-        var fName = req.body.fName;
-        var lName = req.body.lName;
-        var username = req.body.username;
-        var pw = req.body.pw;
-        var bio= req.body.bio;
-        var photo = req.body.photo;
+        var user = {
+            fName : req.body.fName,
+            lName : req.body.lName,
+            username : req.body.username,
+            pw : req.body.pw,
+            bio : req.body.bio,
+            photo : req.body.photo
+        };
 
-        db.insertOne(User, {
-            fName: fName,
-            lName: lName,
-            username: username,
-            pw: pw,
-            bio: bio,
-            photo: photo
-        });
+        db.insertOne(User, user);
 
-        res.redirect('/user/' + username);
+        res.render('profile', user);
     },
 
     getCheckusername: function (req, res) {

@@ -32,7 +32,7 @@
 						<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
 						<p class = "modal_title"><font size = "5">REGISTER</font></p>
 						
-						<form align="center" id="signup" method="post" action="">
+						<form align="center" id="signup" method="post">
 							<div class="avatar-upload">
 								<div class="avatar-edit">
 									<input type='file' id="photo" name="photo" accept="image/*" />
@@ -50,9 +50,9 @@
 							<input type="password" id="cpw" name="cpw" placeholder = "Confirm Password:" required><br><br>
 							<p>Short description about you</p><br>
 							<textarea id="description" rows="3" cols="35"></textarea><br><br>
-							<p id="error"></p>
 							<input class="nav__link nav__link--btn" type="submit" id="register" value="Register">
 						</form> 
+						<p id="error"></p>
 					</div>
 				</div>
 			</li>

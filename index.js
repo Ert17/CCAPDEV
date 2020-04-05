@@ -31,7 +31,7 @@ app.engine( 'hbs', exphbs({
       return new handlebars.SafeString(x);
     },
     str: function(text) {
-      return string.replace(/["']/g, "");
+      return text.replace(/["']/g, "");
     }
   }
 }));
