@@ -22,22 +22,31 @@ const signupController = {
             res.render('partials/headerhome', details);
         }
         else {
+            var fName = req.body.fName;
+            var lName = req.body.lName;
+            var username = req.body.username;
+            var pw = req.body.pw;
+            var bio = req.body.bio;
+            
             if (req.body.photo == '')
-            req.body.photo = 'img/dpic.jpg';
+            var photo = 'img/dpic.jpg';
 
-            var user = {
-                fName : req.body.fName,
-                lName : req.body.lName,
-                username : req.body.username,
-                pw : req.body.pw,
-                bio : req.body.bio,
-                photo : req.body.photo
-            };
+            bcrypt.hash(pw, saltRounds, function(err, hash) {
+                
+                var user = {
+                fName : fName,
+                lName : lName,
+                username : username,
+                pw : hash,
+                bio : bio,
+                photo : photo
+                }
 
-            db.insertOne(User, user, function(flag) {
-                if(flag)
-                    res.redirect('/user/' +  user.username);
-            });
+                db.insertOne(User, user, function(flag) {
+                    if(flag)
+                        res.redirect('/user/' +  user.username);
+                });
+            }); 
         }
     },
 
@@ -47,6 +56,41 @@ const signupController = {
 
         db.findOne(User, {username: username}, 'username', function (result) {
             res.send(result);
+        });
+    },
+
+    postLogIn: function (req, res) {
+
+        var username = req.body.username;
+        var pw = req.body.pw;
+
+        db.findOne(User, {username: username}, '', function (result) {
+            if(result) {
+
+                var user = {
+                    fName : fName,
+                    lName : lName,
+                    username : username,
+                    pw : hash,
+                    bio : bio,
+                    photo : photo
+                };
+
+                bcrypt.compare(pw, result.pw, function(err, equal) {
+                    if(equal)
+                        res.redirect('/user/' + user.username);
+
+                    else {
+                        var details = {error: `Username and/or Password is incorrect.`}
+                        res.render('partials/headerhome', details);
+                    }
+                });
+            }
+
+            else {
+                var details = {error: `Username and/or Password is incorrect.`}
+                res.render('partials/headerhome', details);
+            }
         });
     }
 

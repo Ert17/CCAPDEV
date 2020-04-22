@@ -22,6 +22,8 @@ const app = express();
 
 app.get('/', controller.getHome);
 
+app.post('/', signupController.postLogIn);
+
 app.post('/', validation.signupValidation(), upload.single('photo'), signupController.postSignUp);
 
 app.get('/getCheckusername', signupController.getCheckusername);
