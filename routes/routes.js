@@ -4,6 +4,8 @@ const express = require('express');
 const controller = require('../controllers/controller.js')
 const signupController = require('../controllers/signupController.js')
 
+const validation = require('../helpers/validation.js');
+
 const multer = require('multer');
 const storage = multer.diskStorage({
 	destination: function(req, file, cb) {
@@ -20,7 +22,9 @@ const app = express();
 
 app.get('/', controller.getHome);
 
-app.post('/', upload.single('photo'), signupController.postSignUp);
+app.post('/', validation.signupValidation(), upload.single('photo'), signupController.postSignUp);
+
+app.get('/getCheckusername', signupController.getCheckusername);
 
 app.get('/browse/:query', controller.getSearch);
 
