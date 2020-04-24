@@ -32,26 +32,27 @@ const signupController = {
             var username = req.body.usernameR;
             var pw = req.body.pwR;
             var bio = req.body.bio;
-            var photo = req.body.photo
-            
-            if (photo == '')
-                photo = 'img/dpic.jpg';
+
+            if (req.file == null){
+                var photo = 'img/dpic.jpg';
+            }
+            else
+                var photo = 'img/' + req.file.originalname;
 
             bcrypt.hash(pw, saltRounds, function(err, hash) {
                 
                 var user = {
-                fName : fName,
-                lName : lName,
-                username : username,
-                pw : hash,
-                bio : bio,
-                photo : photo
+                    fName : fName,
+                    lName : lName,
+                    username : username,
+                    pw : hash,
+                    bio : bio,
+                    photo : photo
                 }
 
-                db.insertOne(User, user, function(flag) {
-                    if(flag)
-                        res.redirect('/user/' +  user.username);
-                });
+                db.insertOne(User, user);
+
+                res.redirect('user/' + username);
             }); 
         }
     },
@@ -67,34 +68,30 @@ const signupController = {
 
     postLogIn: function (req, res) {
 
-        var username = req.body.usernameL;
-        var pw = req.body.pwL;
+        var username = req.params.usernameL;
+        var pw = req.params.pwL;
+
+        console.log('pw is ' + pw);
 
         db.findOne(User, {username: username}, '', function (result) {
             if(result) {
-
-                var user = {
-                    fName : fName,
-                    lName : lName,
-                    username : username,
-                    bio : bio,
-                    photo : photo
-                };
-
+                console.log('hash pw is ' + result.pw);
                 bcrypt.compare(pw, result.pw, function(err, equal) {
                     if(equal)
-                        res.redirect('/user/' + user.username);
+                        res.redirect('user/' + username);
 
                     else {
                         var details = {error: `Username and/or Password is incorrect.`}
-                        res.render('home', details);
+                        res.render('home', {layout: 'home.hbs',
+                                    error: details.error});
                     }
                 });
             }
 
             else {
                 var details = {error: `Username and/or Password is incorrect.`}
-                res.render('partials/headerhome', details);
+                res.render('home', {layout: 'home.hbs',
+                                    error: details.error});
             }
         });
     }

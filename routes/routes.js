@@ -22,9 +22,9 @@ const app = express();
 
 app.get('/', controller.getHome);
 
-app.post('/login', signupController.postLogIn);
+app.post('/', signupController.postLogIn);
 
-app.post('/register', validation.signupValidation(), upload.single('photo'), signupController.postSignUp);
+app.post('/', validation.signupValidation(), upload.single('photo'), signupController.postSignUp);
 
 app.get('/getCheckusername', signupController.getCheckusername);
 

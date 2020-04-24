@@ -97,7 +97,12 @@ const controller = {
                 });
             });   
         });
-    }
+    }//,
+
+    // addReview: function (req, res) {
+
+    //     var 
+    // }
 }
 
 module.exports = controller;
