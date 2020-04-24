@@ -5,12 +5,12 @@
 
 // var span = document.getElementsByClassName("close")[0];
 
-// window.onclick = function(event) {
-//   if (event.target == modal||event.target == modal2) {
-// 	modal.style.display = "none";
-// 	modal2.style.display = "none";
-//   }
-// }
+window.onclick = function(event) {
+  if (event.target == modal||event.target == modal2) {
+	modal.style.display = "none";
+	modal2.style.display = "none";
+  }
+}
 
 function readURL(input) {
 	if (input.files && input.files[0]) {
@@ -55,7 +55,7 @@ const sectionOneObserver = new IntersectionObserver(function(
 },
 sectionOneOptions);
 
-sectionOneObserver.observe(sectionOne);
+// sectionOneObserver.observe(sectionOne);
 
 $("#inpt_search").on('focus', function () {
 	$(this).parent('label').addClass('active');

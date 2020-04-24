@@ -1,5 +1,4 @@
-<script src="/js/signup.js" type="text/javascript"></script>
-<script src="/js/validator.min.js" type="text/javascript"></script>
+
 <header>
 	<nav class="main-nav">
 		<ul class="nav__list">
@@ -16,7 +15,7 @@
 					<div id = "login" class="modal-content animated bounceInDown">
 						<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
 						<p class = "modal_title"><font size = "5">LOGIN</font></p><br><br>
-						<form align = "center" id = "loginform" method = "post" action="/login">
+						<form align = "center" id = "loginform" method = "post">
 							<input type="text" id="usernameL" name="username" class="field" placeholder = "Username" required><br><br>
 							<input type="password" id="pwL" name="pw" class="field" placeholder = "Password" required><br><br>
 							<input class="nav__link nav__link--btn" type="submit" id="login" value="Login">
@@ -59,7 +58,7 @@
 							<textarea type="text" id="bio" name="bio" class="field" rows="3" cols="35"></textarea><br><br>
 							<p id="bioError" class="error">{{bioError}}</p>
 
-							<input class="nav__link nav__link--btn" type="submit" id="register" value="Register" disabled>
+							<input class="nav__link nav__link--btn" type="submit" id="register" value="Register">
 						</form> 
 					</div>
 				</div>

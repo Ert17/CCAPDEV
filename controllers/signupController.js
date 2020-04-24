@@ -1,6 +1,9 @@
 
 const { validationResult } = require('express-validator');
 
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 const db = require('../models/db.js');
 
 const User = require('../models/UserModel.js');
@@ -19,17 +22,18 @@ const signupController = {
             for(i = 0; i < errors.length; i++)
                 details[errors[i].param + 'Error'] = errors[i].msg;
 
-            res.render('partials/headerhome', details);
+            res.render('home', details);
         }
         else {
             var fName = req.body.fName;
             var lName = req.body.lName;
-            var username = req.body.username;
-            var pw = req.body.pw;
+            var username = req.body.usernameR;
+            var pw = req.body.pwR;
             var bio = req.body.bio;
+            var photo = req.body.photo
             
-            if (req.body.photo == '')
-            var photo = 'img/dpic.jpg';
+            if (photo == '')
+                photo = 'img/dpic.jpg';
 
             bcrypt.hash(pw, saltRounds, function(err, hash) {
                 
@@ -61,8 +65,8 @@ const signupController = {
 
     postLogIn: function (req, res) {
 
-        var username = req.body.username;
-        var pw = req.body.pw;
+        var username = req.body.usernameL;
+        var pw = req.body.pwL;
 
         db.findOne(User, {username: username}, '', function (result) {
             if(result) {
