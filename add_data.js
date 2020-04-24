@@ -51,10 +51,7 @@ var users = [
         photo: 'img/taylor-swift.jpg'
     }
 ];
-// calls the function insertOne() defined in the `database` object in `./models/db.js`
-// stores the objects in `user` in the collection (table) `profiles`
 db.insertMany(User, users);
-
 
 // ITEMS COLLECTION
 var items = [
@@ -224,6 +221,51 @@ var items = [
         photo: 'img/straw.jpg'
     }
 ];
-// calls the function insertMany() defined in the `database` object in `./models/db.js`
-// stores the objects in `user` in the collection (table) `profiles`
 db.insertMany(Item, items);
+
+// REVIEWS COLLECTION
+var reviews = [
+    {
+        seller: '',
+        iName: 'Drone',
+        reviewer: 'Oninolan',
+        review: 'Quality product. A++',
+        dpreviewer: 'img/olan.jpg'
+    },
+    {
+        seller: 'Oninolan',
+        iName: 'Assorted Toys',
+        reviewer: 'Manny P',
+        review: 'OMg it\'s0 good. My kids love it. Thanks!',
+        dpreviewer: 'img/manny.jpg'
+    },
+    {
+        seller: '',
+        iName: 'Stainless Pot',
+        reviewer: 'GretaThunberg',
+        review: 'Finally something I cen use to boil me straws.',
+        dpreviewer: 'img/thunberg.jpg'
+    },
+    {
+        seller: 'Tswift',
+        iName: '',
+        reviewer: 'Oninolan',
+        review: 'So accomodating. Appreciates swifties fam <3',
+        dpreviewer: 'img/olan.jpg'
+    },
+    {
+        seller: 'Tswift',
+        iName: 'Taylor Swift Lover EP',
+        reviewer: 'GretaThunberg',
+        review: 'Def love this album so much. Thanks',
+        dpreviewer: 'img/thunberg.jpg'
+    },
+    {
+        seller: 'MannyP',
+        iName: '',
+        reviewer: 'Lop3arth',
+        review: 'Happy New Year, my fellow seller!',
+        dpreviewer: 'img/earth.jpg'
+    }
+];
+db.insertMany(Review, reviews);

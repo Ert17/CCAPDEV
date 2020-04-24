@@ -2,21 +2,22 @@ var mongoose = require ('mongoose');
 
 var ReviewSchema = new mongoose.Schema ({
 	iName : {
-		type: String,
-		required: false
+		type: String
 	},
 	seller : {
-		type: String,
-		required: false
-	},
-	reviewType : {
-		type: String,
-		required: true
+		type: String
 	},
 	reviewer : {
 		type: String,
 		required: true
 	},
+	review : {
+		type: String,
+		required: true
+	},
+	dpreviewer : {
+		type: String
+	}
 });
 
 module.exports = mongoose.model('Review', ReviewSchema);

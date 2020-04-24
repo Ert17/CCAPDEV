@@ -42,6 +42,22 @@
 				<button id="submit_button" class = "enter_review">Submit</button>
 			</div>
 			<ol>
+
+				{{#each reviews}}
+		  			<div class='box2 animated jackInTheBox'>
+		  				<div class='review_header'>
+		  					<image src="/{{dpreviewer}}"> 
+		  					<div class='review_name'>{{reviewer}} </div>
+		  				</div>
+		  				{{review}}
+		  				<div class='edit_delete_reply'>
+		  					<button id='submit_button' class='reply'>Reply</button>
+		  					<button id='submit_button' class='edit'>Edit</button>
+		  					<button id='submit_button' class='delete'>Delete</button>
+		  				</div>
+		  			</div>
+		        {{/each}}
+		        
 			</ol>
 			<br><br><br><br>
 		</div>
