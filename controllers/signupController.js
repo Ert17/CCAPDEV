@@ -24,7 +24,7 @@ const signupController = {
 
             console.log(details);
 
-            res.render('partials/headerhome', details);
+            res.render('home', details);
         }
         else {
             var fName = req.body.fName;
@@ -77,7 +77,6 @@ const signupController = {
                     fName : fName,
                     lName : lName,
                     username : username,
-                    pw : hash,
                     bio : bio,
                     photo : photo
                 };
@@ -88,7 +87,7 @@ const signupController = {
 
                     else {
                         var details = {error: `Username and/or Password is incorrect.`}
-                        res.render('partials/headerhome', details);
+                        res.render('home', details);
                     }
                 });
             }

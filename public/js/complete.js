@@ -5,12 +5,12 @@
 
 // var span = document.getElementsByClassName("close")[0];
 
-window.onclick = function(event) {
-  if (event.target == modal||event.target == modal2) {
-	modal.style.display = "none";
-	modal2.style.display = "none";
-  }
-}
+// window.onclick = function(event) {
+//   if (event.target == modal||event.target == modal2) {
+// 	modal.style.display = "none";
+// 	modal2.style.display = "none";
+//   }
+// }
 
 function readURL(input) {
 	if (input.files && input.files[0]) {
@@ -27,9 +27,16 @@ $("#imageUpload").change(function() {
 	readURL(this);
 });
 
-search = function(e) {
+search1 = function(e) {
 	if (event.keyCode === 13) {
-	location.replace("browse");
+		location.replace("browse/" + $('#search').val());
+	}
+	return false;
+}
+
+search2 = function(e) {
+	if (event.keyCode === 13) {
+		location.replace($('#searchbox2').val());
 	}
 	return false;
 }

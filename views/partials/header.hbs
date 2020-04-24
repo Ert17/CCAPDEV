@@ -1,7 +1,7 @@
 <div class="header">
 	<a href="/"><image src="/img/navigation_logo.png" width = "70px" height = "45.465px"  alt="logo" id="logo"></image></a>
 	<label for="inpt_search">
-		<input type="text" placeholder="Search..." id="searchbox2" onkeyup="search()"/>
+		<input type="text" placeholder="Search..." id="searchbox2" onkeyup="search2()"/>
 	</label>
 	
 	<nav class="account">
@@ -10,13 +10,11 @@
 				<a onclick="document.getElementById('myModal').style.display='inline'" class="nav__link nav__link--btn myBtn" id = "myBtn">Login</a>
 				<div id="myModal" class="modal">
 					<div id = "login" class="modal-content animated bounceInDown">
-						<span class="close">&times;</span>
+						<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
 						<p class = "modal_title"><font size = "5">LOGIN</font></p><br><br>
-						<form align = "center" id = "login" method = "post">
-							<label for="username">Username:</label>
-							<input type="text" id="username" name="username" ><br><br>
-							<label for="password">Password:</label>
-							<input type="password" id="password" name="password"><br><br><br>
+						<form align = "center" id = "loginform" method = "post" action="/login">
+							<input type="text" id="usernameL" name="username" class="field" placeholder = "Username" required><br><br>
+							<input type="password" id="pwL" name="pw" class="field" placeholder = "Password" required><br><br>
 							<input class="nav__link nav__link--btn" type="submit" id="login" value="Login">
 						</form> 
 						<p id="error"></p>
@@ -30,27 +28,35 @@
 						<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
 						<p class = "modal_title"><font size = "5">REGISTER</font></p><br>
 						
-						<form align="center" id="signup" method="post">
+						<form align="center" id="signup" method="post" action="/register">
 							<div class="avatar-upload">
 								<div class="avatar-edit">
-									<input type='file' id="photo" name="photo" accept="image/*" />
+									<input type='file' id="imageUpload" name ="photo" accept=".png, .jpg, .jpeg" />
 									<label for="imageUpload"></label>
 								</div>
 								<div class="avatar-preview">
 									<div id="imagePreview" style="background-image: url(img/dpic.jpg);">
 									</div>
 								</div>
-							</div>
-							<input type="text" id="fName" name="fName" placeholder = "First Name" required><br><br>
-							<input type="text" id="lName" name="lName" placeholder = "Last Name" required><br><br>
-							<input type="text" id="username" name="username" placeholder = "Username" required><br><br>
-							<input type="password" id="pw" name="pw" placeholder = "Password" required><br><br>
-							<input type="password" id="cpw" name="cpw" placeholder = "Confirm Password:" required><br><br>
+							</div><br>
+							<input type="text" id="fName" name="fName" class="field" placeholder = "First Name" required><br><br>
+							<p id="fNameError" class="error">{{fNameError}}</p>
+
+							<input type="text" id="lName" name="lName" class="field" placeholder="Last Name" required><br><br>
+							<p id="lNameError" class="error">{{lNameError}}</p>
+
+							<input type="text" id="usernameR" name="usernameR" class="field" placeholder="Username" required><br><br>
+							<p id="usernameError" class="error">{{usernameError}}</p>
+
+							<input type="password" id="pwR" name="pwR" class="field" placeholder = "Password" required><br><br>
+							<p id="pwError" class="error">{{pwError}}</p>
+
 							<p>Short description about you</p><br>
-							<textarea id="description" rows="3" cols="35"></textarea><br><br>
+							<textarea type="text" id="bio" name="bio" class="field" rows="3" cols="35"></textarea><br><br>
+							<p id="bioError" class="error">{{bioError}}</p>
+
 							<input class="nav__link nav__link--btn" type="submit" id="register" value="Register">
 						</form>
-						<p id="error"></p>
 					</div>
 				</div>
 			</li>

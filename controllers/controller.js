@@ -9,12 +9,17 @@ const Review = require('../models/ReviewModel.js');
 const controller = {
 
 	getHome: function (req, res) {
-		res.render('home', {layout: 'home.hbs'});
+
+        db.findMany(Item, {}, '', function (results) {
+            res.render('home', 
+                {layout: 'home.hbs',
+                items: results});
+        })
 	},
 
     getSearch: function (req, res) {
 
-        var query = {seller: req.params.query};
+        var query = {iName: req.params.query};
 
         var projection = 'photo iName price';
 
