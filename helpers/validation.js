@@ -10,10 +10,10 @@ const validation = {
 
             check('lName', 'Last name should not be empty.').notEmpty(),
 
-            check('username', 'Username should atleast contain 4 characters.')
+            check('usernameR', 'Username should atleast contain 4 characters.')
             .isLength({min: 4}),
 
-            check('pw', 'Passwords should contain at least 8 characters.')
+            check('pwR', 'Password should contain at least 8 characters.')
             .isLength({min: 8}),
 
             check('bio', 'Bio should not be empty.').notEmpty()

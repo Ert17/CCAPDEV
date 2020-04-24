@@ -12,7 +12,7 @@ const signupController = {
 
     postSignUp: function (req, res) {
 
-        var errors = validationResult(req);
+        var errors = validationResult(req.body);
 
         if (!errors.isEmpty()) {
 
@@ -22,7 +22,9 @@ const signupController = {
             for(i = 0; i < errors.length; i++)
                 details[errors[i].param + 'Error'] = errors[i].msg;
 
-            res.render('home', details);
+            console.log(details);
+
+            res.render('partials/headerhome', details);
         }
         else {
             var fName = req.body.fName;
