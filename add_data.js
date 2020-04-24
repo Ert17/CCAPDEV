@@ -38,7 +38,7 @@ var users = [
         fName: 'Greta',
         lName: 'Thunberg',
         pw: '4321',
-        username: 'LordHandStark',
+        username: 'GretaThunberg',
         bio: 'Environmentalist and dog lover',
         photo: 'img/thunberg.jpg'
     },
@@ -235,7 +235,7 @@ var reviews = [
     {
         seller: 'Oninolan',
         iName: 'Assorted Toys',
-        reviewer: 'Manny P',
+        reviewer: 'MannyP',
         review: 'OMg it\'s0 good. My kids love it. Thanks!',
         dpreviewer: 'img/manny.jpg'
     },
