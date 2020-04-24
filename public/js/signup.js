@@ -4,23 +4,25 @@ $(document).ready(function () {
 
         var fName = validator.trim($('#fName').val());
         var lName = validator.trim($('#lName').val());
-        var username = validator.trim($('#username').val());
-        var pw = validator.trim($('#pw').val());
+        var usernameR = validator.trim($('#usernameR').val());
+        var pwR = validator.trim($('#pwR').val());
         var bio = validator.trim($('#bio').val());
 
         var fNameEmpty = validator.isEmpty(fName);
         var lNameEmpty = validator.isEmpty(lName);
-        var usernameEmpty = validator.isEmpty(username);
-        var pwEmpty = validator.isEmpty(pw);
+        var usernameREmpty = validator.isEmpty(usernameR);
+        var pwREmpty = validator.isEmpty(pwR);
         var bioEmpty = validator.isEmpty(bio);
 
-        return !fNameEmpty && !lNameEmpty && !usernameEmpty && !pwEmpty && !bioEmpty;
+        return !fNameEmpty && !lNameEmpty && !usernameREmpty && !pwREmpty && !bioEmpty;
     }
 
     function isValidUsername(field, callback) {
 
-        var username = validator.trim($('#username').val());
+        var username = validator.trim($('#usernameR').val());
         var isValidLength = validator.isLength(username, {min: 4});
+
+        console.log('Username is' + username);
 
         if(isValidLength) {
 
@@ -28,7 +30,7 @@ $(document).ready(function () {
 
                 if(result.username != username) {
 
-                    if(field.is($('#username'))) 
+                    if(field.is($('#usernameR'))) 
                         $('#usernameError').text('');
                     console.log('username true');
 
@@ -37,7 +39,7 @@ $(document).ready(function () {
 
                 else {
 
-                    if(field.is($('#username')))
+                    if(field.is($('#usernameR')))
                         $('#usernameError').text('Username is already taken.');
 
                     console.log('username false');
@@ -48,7 +50,7 @@ $(document).ready(function () {
 
         else {
 
-            if(field.is($('#username'))){
+            if(field.is($('#usernameR'))){
                 console.log('username false');
                 $('#usernameError').text('Username should contain at least 4 characters.');
             }
@@ -61,12 +63,12 @@ $(document).ready(function () {
 
         var validPassword = false;
 
-        var password = validator.trim($('#pw').val());
+        var password = validator.trim($('#pwR').val());
         var isValidLength = validator.isLength(password, {min: 8});
 
         if(isValidLength) {
 
-            if(field.is($('#pw')))
+            if(field.is($('#pwR')))
                 $('#pwError').text('');
 
             validPassword = true;
@@ -76,7 +78,7 @@ $(document).ready(function () {
 
         else {
 
-            if(field.is($('#pw')))
+            if(field.is($('#pwR')))
                 $('#pwError').text(`Passwords should contain at least 8
                     characters.`);
             console.log('pw false');
@@ -130,14 +132,14 @@ $(document).ready(function () {
         validateField($('#lName'), 'Last name', $('#lNameError'));
     });
 
-    $('#username').keyup(function () {
+    $('#usernameR').keyup(function () {
 
-        validateField($('#username'), 'Username', $('#usernameError'));
+        validateField($('#usernameR'), 'Username', $('#usernameError'));
     });
 
-    $('#pw').keyup(function () {
+    $('#pwR').keyup(function () {
 
-        validateField($('#pw'), 'Password', $('#pwError'));
+        validateField($('#pwR'), 'Password', $('#pwError'));
     });
 
     $('#bio').keyup(function () {

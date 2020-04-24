@@ -16,9 +16,9 @@
 					<div id = "login" class="modal-content animated bounceInDown">
 						<span class="close" onclick="document.getElementById('id02').style.display='none'">&times;</span>
 						<p class = "modal_title"><font size = "5">LOGIN</font></p><br><br>
-						<form align = "center" id = "login" method = "post">
-							<input type="text" id="username" name="username" class="field" placeholder = "Username" required><br><br>
-							<input type="password" id="pw" name="pw" class="field" placeholder = "Password" required><br><br>
+						<form align = "center" id = "loginform" method = "post" action="/login">
+							<input type="text" id="usernameL" name="username" class="field" placeholder = "Username" required><br><br>
+							<input type="password" id="pwL" name="pw" class="field" placeholder = "Password" required><br><br>
 							<input class="nav__link nav__link--btn" type="submit" id="login" value="Login">
 						</form> 
 						<p id="error"></p>
@@ -46,13 +46,13 @@
 							<input type="text" id="fName" name="fName" class="field" placeholder = "First Name" required><br><br>
 							<p id="fNameError" class="error">{{fNameError}}</p>
 
-							<input type="text" id="lName" name="lName" class="field" placeholder = "Last Name" required><br><br>
+							<input type="text" id="lName" name="lName" class="field" placeholder="Last Name" required><br><br>
 							<p id="lNameError" class="error">{{lNameError}}</p>
 
-							<input type="text" id="username" name="username" class="field" placeholder = "Username" required><br><br>
+							<input type="text" id="usernameR" name="username" class="field" placeholder="Username" required><br><br>
 							<p id="usernameError" class="error">{{usernameError}}</p>
 
-							<input type="password" id="pw" name="pw" class="field" placeholder = "Password" required><br><br>
+							<input type="password" id="pwR" name="pw" class="field" placeholder = "Password" required><br><br>
 							<p id="pwError" class="error">{{pwError}}</p>
 
 							<p>Short description about you</p><br>
