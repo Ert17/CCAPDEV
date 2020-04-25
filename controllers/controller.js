@@ -38,7 +38,19 @@ const controller = {
     },
 
 	getBrowse: function (req, res) {
-        res.render('browse');
+
+        db.findMany (Item, {}, '', function (results) {
+
+            if(results != null) {
+                var items = results;
+
+                res.render('browse', 
+                    {
+                        items: results
+                    });
+            }
+        })
+
 	},
 
     getItem: function (req, res) {

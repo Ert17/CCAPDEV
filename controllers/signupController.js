@@ -68,8 +68,8 @@ const signupController = {
 
     postLogIn: function (req, res) {
 
-        var username = req.params.usernameL;
-        var pw = req.params.pwL;
+        var username = req.body.usernameL;
+        var pw = req.body.pwL;
 
         console.log('pw is ' + pw);
 
