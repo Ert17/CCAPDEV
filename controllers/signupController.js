@@ -19,6 +19,15 @@ const signupController = {
             errors = errors.errors;
 
             var details = {};
+
+            if(req.cookies.userData.username) {
+
+                details.flag = true;
+                details.Cusername = req.cookies.userData.username;
+            }
+            else
+                details.flag = false;
+
             for(i = 0; i < errors.length; i++)
                 details[errors[i].param + 'Error'] = errors[i].msg;
 
@@ -50,7 +59,11 @@ const signupController = {
                     photo : photo
                 }
 
-                db.insertOne(User, user);
+                db.insertOne(User, user, function (result) {
+                    db.findOne(User, {username: user.username}, '', function (result) {
+                        res.cookie('userData', result);
+                    });
+                });
 
                 res.redirect('user/' + username);
             }); 
@@ -76,12 +89,22 @@ const signupController = {
         db.findOne(User, {username: username}, '', function (result) {
             if(result) {
                 console.log('hash pw is ' + result.pw);
+
+                var user = {
+                    username: result.username,
+                    fName: result.fName
+                };
+
                 bcrypt.compare(pw, result.pw, function(err, equal) {
-                    if(equal)
-                        res.redirect('user/' + username);
+                    if(equal){
+
+                        res.cookie('userData', result);
+
+                        res.redirect('user/' + user.username);
+                    }
 
                     else {
-                        var details = {error: `Username and/or Password is incorrect.`}
+                        var details = {flag: false, error: `Username and/or Password is incorrect.`}
                         res.render('home', {layout: 'home.hbs',
                                     error: details.error});
                     }
@@ -89,11 +112,19 @@ const signupController = {
             }
 
             else {
-                var details = {error: `Username and/or Password is incorrect.`}
+                var details = {flag: false, error: `Username and/or Password is incorrect.`}
                 res.render('home', {layout: 'home.hbs',
                                     error: details.error});
             }
         });
+    },
+
+    getLogOut: function (req, res) {
+
+        res.clearCookie('userData');
+
+        res.redirect('/');
+
     }
 
 }

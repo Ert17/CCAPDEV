@@ -2,7 +2,6 @@
 const express = require('express');
 
 const controller = require('../controllers/controller.js')
-const signupController = require('../controllers/signupController.js')
 
 const validation = require('../helpers/validation.js');
 
@@ -22,11 +21,13 @@ const app = express();
 
 app.get('/', controller.getHome);
 
-app.post('/login', signupController.postLogIn);
+app.post('/login', controller.postLogIn);
 
-app.post('/', validation.signupValidation(), upload.single('photo'), signupController.postSignUp);
+app.post('/', validation.signupValidation(), upload.single('photo'), controller.postSignUp);
 
-app.get('/getCheckusername', signupController.getCheckusername);
+app.get('/logout', controller.getLogOut);
+
+app.get('/getCheckusername', controller.getCheckusername);
 
 app.get('/browse/:query', controller.getSearch);
 
