@@ -35,10 +35,10 @@ const controller = {
 
             var details = {};
 
-            if(req.cookies.userData.username) {
+            if(req.session.username) {
 
                 details.flag = true;
-                details.Cusername = req.cookies.userData.username;
+                details.Cusername = req.session.username;
             }
             else
                 details.flag = false;
@@ -76,7 +76,8 @@ const controller = {
 
                 db.insertOne(User, user, function (result) {
                     db.findOne(User, {username: user.username}, '', function (result) {
-                        res.cookie('userData', result);
+                        req.session.username = result.username;
+                        req.session.fName = result.fName;
                     });
                 });
 
@@ -95,8 +96,6 @@ const controller = {
         db.findOne(User, {username: username}, null, function (result) {
             if(result) {
 
-                res.cookie("userData", result);
-
                 console.log('hash pw is ' + result.pw);
 
                 var user = {
@@ -106,6 +105,9 @@ const controller = {
 
                 bcrypt.compare(pw, result.pw, function(err, equal) {
                     if(equal){
+
+                        req.session.username = result.username;
+                        req.session.fName = result.fName;
 
                         res.redirect('user/' + user.username);
                     }
@@ -134,10 +136,10 @@ const controller = {
 
         var details = {};
 
-        if(req.cookies.userData.username) {
+        if(req.session.username) {
             details.flag = true;
-            details.Cusername = req.cookies.userData.username;
-            details.CfName = req.cookies.userData.fName;
+            details.Cusername = req.session.username;
+            details.CfName = req.session.fName;
         }
         else
             details.flag = false;
@@ -157,10 +159,10 @@ const controller = {
 
         var details = {};
 
-        if(req.cookies.userData.username) {
+        if(req.session.username) {
             details.flag = true;
-            details.Cusername = req.cookies.userData.username;
-            details.CfName = req.cookies.userData.fName;
+            details.Cusername = req.session.username;
+            details.CfName = req.session.fName;
         }
         else
             details.flag = false;
@@ -184,10 +186,10 @@ const controller = {
 
         var details = {};
 
-        if(req.cookies.userData.username) {
+        if(req.session.username) {
             details.flag = true;
-            details.Cusername = req.cookies.userData.username;
-            details.CfName = req.cookies.userData.fName;
+            details.Cusername = req.session.username;
+            details.CfName = req.session.fName;
         }
         else
             details.flag = false;
@@ -220,10 +222,10 @@ const controller = {
         var query2 = {seller: req.params.username};
         var details = {};
 
-        if(req.cookies.userData.username) {
+        if(req.session.username) {
             details.flag = true;
-            details.Cusername = req.cookies.userData.username;
-            details.CfName = req.cookies.userData.fName;
+            details.Cusername = req.session.username;
+            details.CfName = req.session.fName;
         }
         else
             details.flag = false;
@@ -259,17 +261,15 @@ const controller = {
     },
 
     getLogOut: function (req, res) {
+\
 
-        if (req.session.user && req.cookies.user_sid) {
-            res.clearCookie('user_sid');
+        req.session.destroy(function(err) {
+            if (err) throw err;
+
             res.redirect('/');
-        } 
-        else {
-            res.redirect('/');
-        }
+        })
+
     }
-
-    //,
 
     // addReview: function (req, res) {
 
