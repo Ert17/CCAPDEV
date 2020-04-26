@@ -74,15 +74,13 @@ const controller = {
                     photo : photo
                 }
 
-                db.insertOne(User, user, function (result) {
-                    db.findOne(User, {username: user.username}, '', function (result) {
-                        req.session.username = result.username;
-                        req.session.fName = result.fName;
-                    });
-                });
+                req.session.username = user.username;
+                req.session.fName = user.fName;
 
-                res.redirect('user/' + username);
-            }); 
+                db.insertOne(User, user);
+
+                res.redirect('user/' + user.username);
+            });
         }
     },
 
@@ -261,7 +259,6 @@ const controller = {
     },
 
     getLogOut: function (req, res) {
-\
 
         req.session.destroy(function(err) {
             if (err) throw err;
