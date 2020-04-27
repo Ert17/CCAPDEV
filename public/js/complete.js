@@ -75,15 +75,15 @@ $("#inpt_search").on('blur', function () {
 
 
 // REVIEW BOX
-$("#submit_button").click(function(){
-	if($("#review").val()!=''){
-		$("ol").prepend("<div class='box2 animated jackInTheBox'><div class='review_header'><img src='dpic.jpg'> <div class='review_name'>Anonymous </div></div>"+$("#review").val()+"<div class='edit_delete_reply'><button id='submit_button' class = 'reply'>Reply</button><button id='submit_button' class = 'edit'>Edit</button><button id='submit_button' class = 'delete'>Delete</button></div></div>");
-		$('#review').val('');
-	}
-	else{
-		alert("Can't submit an empty text");
-	}
- });
+// $("#submit_button").click(function(){
+// 	if($("#review").val()!=''){
+// 		$("ol").prepend("<div class='box2 animated jackInTheBox'><div class='review_header'><img src='dpic.jpg'> <div class='review_name'>Anonymous </div></div>"+$("#review").val()+"<div class='edit_delete_reply'><button id='submit_button' class = 'reply'>Reply</button><button id='submit_button' class = 'edit'>Edit</button><button id='submit_button' class = 'delete'>Delete</button></div></div>");
+// 		$('#review').val('');
+// 	}
+// 	else{
+// 		alert("Can't submit an empty text");
+// 	}
+//  });
 
 // GET CONTACT INFORMATION
  function display() {
@@ -99,9 +99,11 @@ $("#submit_button").click(function(){
 function display() {
 	var S = document.getElementById("sell_item");
 	var I = document.getElementById("Item_review");
+	var E = document.getElementById("edit_profile");
 	if(I.style.display === "none"){
-	I.style.display = "block";  // <-- Set it to block
-	S.style.display = "none";
+		I.style.display = "block";  // <-- Set it to block
+		S.style.display = "none";
+		E.style.display = "block";
 	} 
 }
 
@@ -109,8 +111,23 @@ function display() {
 function Sell_Item() {
 	var S = document.getElementById("sell_item");
 	var I = document.getElementById("Item_review");
+	var E = document.getElementById("edit_profile");
 	if(S.style.display === "none"){
-	S.style.display = "block";  // <-- Set it to block
+		S.style.display = "block";  // <-- Set it to block
+		I.style.display = "none";
+		E.style.display = "none";
+
+	} 
+}
+
+// EDIT PROFIE WINDOW
+function Edit_Profile() {
+	var S = document.getElementById("sell_item");
+	var I = document.getElementById("Item_review");
+	var E = document.getElementById("edit_profile");
+	if(E.style.display === "none"){
+	E.style.display = "block";  // <-- Set it to block
 	I.style.display = "none";
+	S.style.display = "none";
 	} 
 }

@@ -1,51 +1,52 @@
 <section class="profile">
-		<br><br><br><br><br><br>
-		<img src="/{{photo}}" alt="Profile image"><br><br>
-		<font size = "5px"> {{fName}} {{lName}} </font><br>
-		<font size = "5px" color="white">@{{username}}</font><br>
-		<span class="fa fa-star checked"></span>
-		<span class="fa fa-star checked"></span>
-		<span class="fa fa-star checked"></span>
-		<span class="fa fa-star"></span>
-		<span class="fa fa-star"></span><br><br>
-		<font size = "3px" color="white">{{bio}}</font><br><br>
-		<button id="btncontact" class = "btncontact" onclick="display()">
-			Items & Reviews
-		</button>
-		<button id="btncontact" class = "btncontact" onclick="Sell_Item()">
-			Sell an Item
-		</button>
-		<button id="btncontact" class = "btncontact">
-			Edit Profile
-		</button>
+	<br><br><br><br><br><br>
+	<img src="/{{photo}}" alt="Profile image"><br><br>
+	<p id="fullname"><font size = "5px"> {{fName}} {{lName}} </font></p><br>
+	<p id="username"><font size = "5px" color="white">@{{username}}</font></p><br>
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star checked"></span>
+	<span class="fa fa-star"></span>
+	<span class="fa fa-star"></span><br><br>
+	<font size = "3px" color="white">{{bio}}</font><br><br>
+	<button id="btncontact" class = "btncontact" onclick="display()">
+		Items & Reviews
+	</button>
+	<button id="btncontact" class = "btncontact" onclick="Sell_Item()">
+		Sell an Item
+	</button>
+	<button id="btncontact" class = "btncontact" onclick="Edit_Profile()">
+		Edit Profile
+	</button>
+</section>
+
+<div id="Item_review" style="display: block">
+	<section class="reviews">
+		<div class="rightbox">
+			<b><p class= "title"><font size = "15" color= "white">ON-SHELF</font></p></b>
+		</div>
 	</section>
+	<section class="main-2">
+		<div class="posts-2" style="height: 296px;">
 
-	<div id="Item_review" style="display: block">
-		<section class="reviews">
-			<div class="rightbox">
-				<b><p class= "title"><font size = "15" color= "white">ON-SHELF</font></p></b>
-			</div>
-		</section>
-		<section class="main-2">
-			<div class="posts-2" style="height: 296px;">
+			{{#each items}}
+	            <a href="/item/{{iName}}">
+		  			<div class="card" align="left">
+		  				<span class="close-delete">&times;</span>
+						<image src="/{{photo}}" height="192px" width="192px"><br>
+						<p class="item_description">{{this.iName}}</p>
+						<p class="item_description">₱ {{this.price}}</p>
+					</div>
+				</a>
+	        {{/each}}
 
-				{{#each items}}
-		            <a href="/item/{{iName}}">
-			  			<div class="card" align="left">
-			  				<span class="close-delete">&times;</span>
-							<image src="/{{photo}}" height="192px" width="192px"><br>
-							<p class="item_description">{{this.iName}}</p>
-							<p class="item_description">₱ {{this.price}}</p>
-						</div>
-					</a>
-		        {{/each}}
-
-			</div>
-		</section>
-		<section class="reviews2">
-			<div class="rightbox">
-				<div class="box1">
-					<br><b><p class= "title"><font size = "15" color= "white">REVIEWS</font></p></b>
+		</div>
+	</section>
+	<section class="reviews2">
+		<div class="rightbox">
+			<div class="box1">
+				<br><b><p class= "title"><font size = "15" color= "white">REVIEWS</font></p></b>
+				<form id="review" method="post" action="/review">
 					<textarea class="review_textbox box" placeholder="Tell us something about this user..." id="review" rows="3" cols="30" maxlength="161"></textarea><br>
 					<fieldset class="rating">
 						<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" ></label>
@@ -55,55 +56,84 @@
 						<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" ></label>
 					</fieldset>
 					<button id="submit_button" class = "enter_review">Submit</button>
-				</div>
-				<ol>
-
-					{{#each reviews}}
-			  			<div class='box2 animated jackInTheBox'>
-			  				<div class='review_header'>
-			  					<image src="/{{dpreviewer}}"> 
-			  					<a href="/user/{{this.reviewer}}"><div class='review_name'>{{reviewer}} </div></a>
-			  				</div>
-			  				{{review}}
-			  				<div class='edit_delete_reply'>
-			  					<button id='submit_button' class='reply'>Reply</button>
-			  					<button id='submit_button' class='edit'>Edit</button>
-			  					<button id='submit_button' class='delete'>Delete</button>
-			  				</div>
-			  			</div>
-			        {{/each}}
-
-				</ol>
+				</form>
 			</div>
-		</section>
-	</div>
-	
-	<div id="sell_item" style="display: none">
-		<section class="sell">
-			<b><p class= "title"><font size = "15" color= "white">SELL AN ITEM</font></p></b>
-			
-			<div class="avatar-upload">
-				<div class="avatar-edit">
-					<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-					<label for="imageUpload"></label>
-				</div>
-				<div class="avatar-preview2">
-					<div id="imagePreview" style="background-image: url(dpic.jpg);">
-					</div>
-				</div>
-			</div>
+			<ol>
 
-			<div class="sell_form">
-				<font color="black">
-				<p>Item name:<input type="text" id="Item_name" name="Item_name"></p><br>
-				<p>Description:<input type="text" id="Description" name="Description"></p><br>
-				<p>Price:<input type="text" id="Price" name="Price"></p><br>
-				<p>Quantity:<input type="text" id="Quantity" name="Quantity"></p><br>
-				<p>Meet up location:<input type="text" id="Location" name="Location"></p><br>
-				<p>Contact Information:<input type="text" id="Contact" name="Contact"></p><br>
-				<p>Mode of payment:<input type="text" id="Payment" name="Payment"></p>
-				</font>
-				<button id="submit_button" class = "enter_sell center">Submit</button>
+				{{#each reviews}}
+		  			<div class='box2 animated jackInTheBox'>
+		  				<div class='review_header'>
+		  					<image src="/{{dpreviewer}}"> 
+		  					<a href="/user/{{this.reviewer}}"><div class='review_name'>{{reviewer}} </div></a>
+		  				</div>
+		  				{{review}}
+		  				<div class='edit_delete_reply'>
+		  					<button id='submit_button' class='reply'>Reply</button>
+		  					<button id='submit_button' class='edit'>Edit</button>
+		  					<button id='submit_button' class='delete'>Delete</button>
+		  				</div>
+		  			</div>
+		        {{/each}}
+
+			</ol>
+		</div>
+	</section>
+</div>
+
+<div id="sell_item" style="display: none">
+	<section class="sell">
+		<b><p class= "title"><font size = "15" color= "white">SELL AN ITEM</font></p></b>
+		
+		<div class="avatar-upload">
+			<div class="avatar-edit">
+				<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+				<label for="imageUpload"></label>
 			</div>
-		</section>
-	</div>
+			<div class="avatar-preview2">
+				<div id="imagePreview" style="background-image: url(dpic.jpg);">
+				</div>
+			</div>
+		</div>
+
+		<div class="sell_form">
+			<font color="black">
+			<p>Item name:<input type="text" id="Item_name" name="Item_name"></p><br>
+			<p>Description:<input type="text" id="Description" name="Description"></p><br>
+			<p>Price:<input type="text" id="Price" name="Price"></p><br>
+			<p>Quantity:<input type="text" id="Quantity" name="Quantity"></p><br>
+			<p>Meet up location:<input type="text" id="Location" name="Location"></p><br>
+			<p>Contact Information:<input type="text" id="Contact" name="Contact"></p><br>
+			<p>Mode of payment:<input type="text" id="Payment" name="Payment"></p>
+			</font>
+			<button id="submit_button" class = "enter_sell center">Submit</button>
+		</div>
+	</section>
+</div>
+
+<div id="edit_profile" style="display: none">
+	<section class="sell">
+		<b><p class="title"><font size = "15" color= "white">EDIT PROFILE</font></p></b>
+		
+		<div class="avatar-upload">
+			<div class="avatar-edit">
+				<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
+				<label for="imageUpload"></label>
+			</div>
+			<div class="avatar-preview2">
+				<div id="imagePreview" style="background-image: url(dpic.jpg);">
+				</div>
+			</div>
+		</div>
+
+		<div class="sell_form">
+			<font color="black">
+			<p>First name:<input type="text" id="First_name" name="First_name"></p><br>
+			<p>Last name:<input type="text" id="Last_name" name="Last_name"></p><br>
+			<p>Username:<input type="text" id="Username" name="Username"></p><br>
+			<p>Description:<input type="text" id="Description" name="Description"></p><br>
+			<p>Password:<input type="password" id="Password" name="Password"></p>
+			</font>
+			<button id="submit_button" class = "enter_sell center">Submit</button>
+		</div>
+	</section>
+</div>

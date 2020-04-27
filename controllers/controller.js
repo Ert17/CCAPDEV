@@ -76,6 +76,7 @@ const controller = {
 
                 req.session.username = user.username;
                 req.session.fName = user.fName;
+                req.session.photo = user.photo;
 
                 db.insertOne(User, user);
 
@@ -106,6 +107,7 @@ const controller = {
 
                         req.session.username = result.username;
                         req.session.fName = result.fName;
+                        req.session.photo = result.photo;
 
                         res.redirect('user/' + user.username);
                     }
@@ -124,6 +126,28 @@ const controller = {
                                     error: details.error});
             }
         });
+    },
+
+    postReview: function (req, res) {
+
+        var reviewtext = req.body.reviewbox;
+        var r = {};
+
+        if(req.session.username) {
+            r.reviewer = req.session.username;
+            r.dpreviewer = req.session.photo;
+            r.seller = req.body.username;
+            r.iName = req.body.itemName;
+            r.review = reviewtext;
+
+            db.insertOne(Review, r);
+
+            if (r.iName == '')
+                res.redirect('user/' + review.seller);
+            
+            else
+                res.redirect('item/' + review.iName);
+        }
     },
 
     getSearch: function (req, res) {
@@ -268,10 +292,6 @@ const controller = {
 
     }
 
-    // addReview: function (req, res) {
-
-    //     var 
-    // }
 }
 
 module.exports = controller;
