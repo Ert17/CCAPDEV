@@ -25,6 +25,8 @@ app.post('/login', controller.postLogIn);
 
 app.post('/', validation.signupValidation(), upload.single('photo'), controller.postSignUp);
 
+app.post('/review', controller.postReview);
+
 app.get('/logout', controller.getLogOut);
 
 app.get('/getCheckusername', controller.getCheckusername);
@@ -36,8 +38,6 @@ app.get('/browse', controller.getBrowse);
 app.get('/item/:iName', controller.getItem);
 
 app.get('/user/:username', controller.getUser);
-
-app.post('/review', controller.postReview);
 
 // exports the object `app` (defined above) when another script exports from this file
 module.exports = app;

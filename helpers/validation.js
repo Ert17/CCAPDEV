@@ -20,7 +20,11 @@ const validation = {
         ];
 
         return validation;
-    }
+    },
+
+    // reviewValidation: function () {
+    //     check('reviewbox', 'Review shoould not be empty.').notEmpty
+    // }
 }
 
 module.exports = validation;

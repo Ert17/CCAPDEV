@@ -1,79 +1,82 @@
 <section class="item animated bounceInDown">
-		<div>
-			<img src="/{{str photo}}" width="100%" height="100%"><br>
-			<p class="item_description2" id="itemName"><font size="5px">{{iName}}</p>
-			<p class="item_description2">P {{price}}</font></p>
-		</div>
-	</section>
-	<section class="description">
-		<div class="rightbox">
-			<br><b><p class= "title"><font size = "15" color= "white">ITEM DESCRIPTION</font></p></b>
-			<p> Posted by <a href="/user/{{seller}}">{{seller}}</a></p>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star checked"></span>
-			<span class="fa fa-star"></span>
-			<span class="fa fa-star"></span></p><br>
-			<section class="item_section">
-				<font color="white">
-				<button id="btncontact" class = "btncontact" onclick="display()">
-				    Get Information
-				</button>
-				<div id="contact" style="display: none">
-				    <p><b> Quantity:</b>{{quantity}}</p>
-					<p><b> Meet up location:</b>{{meet_location}}</p>
-					<p><b> Contact information:</b>{{contact}}</p>
-					<p><b> Mode of payment:</b>{{MOD}}</p><br>
-				</div>
-				<p>{{bio}}</p>
-				</font>
-			</section><br><br><br>
-			<div class="box1">
-				<b><p class= "title"><font size = "15" color= "white">REVIEWS</font></p></b>
-				<br>
-				<form id="review" method="post" action="/review">
-					<textarea class="review_textbox box field" placeholder="Tell us something about this user..." id="reviewbox" type="text" rows="3" cols="30" maxlength="161" required></textarea><br>
-					<fieldset class="rating">
-						<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" ></label>
-						<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" ></label>
-						<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" ></label>
-						<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" ></label>
-						<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" ></label>
-					</fieldset>
-					<input type="submit" id="submit_button" class = "enter_review">
-				</form>
+	<div>
+		<img src="/{{str photo}}" width="100%" height="100%"><br>
+		<p class="item_description2" id="itemName"><font size="5px">{{iName}}</p>
+		<p class="item_description2">P {{price}}</font></p>
+	</div>
+</section>
+<section class="description">
+	<div class="rightbox">
+		<br><b><p class= "title"><font size = "15" color= "white">ITEM DESCRIPTION</font></p></b>
+		<p id="sell"> Posted by <a href="/user/{{seller}}">{{seller}}</a></p>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star"></span>
+		<span class="fa fa-star"></span></p><br>
+		<section class="item_section">
+			<font color="white">
+			<button id="btncontact" class = "btncontact" onclick="display()">
+			    Get Information
+			</button>
+			<div id="contact" style="display: none">
+			    <p><b> Quantity:</b>{{quantity}}</p>
+				<p><b> Meet up location:</b>{{meet_location}}</p>
+				<p><b> Contact information:</b>{{contact}}</p>
+				<p><b> Mode of payment:</b>{{MOD}}</p><br>
 			</div>
-			<ol>
-
-				{{#each reviews}}
-		  			<div class='box2 animated jackInTheBox'>
-		  				<div class='review_header'>
-		  					<image src="/{{dpreviewer}}"> 
-		  					<a href="/user/{{reviewer}}"><div class='review_name'>{{reviewer}} </div></a>
-		  				</div>
-		  				{{review}}
-		  				<div class='edit_delete_reply'>
-		  					<button id='submit_button' class='reply'>Reply</button>
-		  					<button id='submit_button' class='edit'>Edit</button>
-		  					<button id='submit_button' class='delete'>Delete</button>
-		  				</div>
-		  			</div>
-		        {{/each}}
-		        
-			</ol>
-			<br><br><br><br>
+			<p>{{bio}}</p>
+			</font>
+		</section><br><br><br>
+		<div class="box1">
+			<b><p class= "title"><font size = "15" color= "white">REVIEWS</font></p></b>
+			<br>
+			<form id="reviewItem">
+				<textarea type="text" id="reviewboxItem" class="review_textbox box field" placeholder="Tell us something about this item..." rows="3" cols="30" maxlength="161" required></textarea><br>
+				<fieldset class="rating">
+					<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" ></label>
+					<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" ></label>
+					<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" ></label>
+					<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" ></label>
+					<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" ></label>
+				</fieldset>
+				<input type="submit" id="submit_buttonItem" class="enter_reviewItem" value="Submit">
+			</form>
 		</div>
-	</section>
-	<script src="/js/complete.js"></script>
-	<script src="/js/Navigation_bar.js"></script>
-	<script src="/js/Reviews.js"></script>
-	<script type="text/javascript">
-		function display() {
-    		var T = document.getElementById("contact");
-			if(T.style.display === "none"){
-    		T.style.display = "block";  // <-- Set it to block
-			} else {
-				T.style.display = "none";
-			}
+		<ol>
+
+			{{#each reviews}}
+	  			<div class='box2 animated jackInTheBox'>
+	  				<div class='review_header'>
+	  					<image src="/{{dpreviewer}}"> 
+	  					<a href="/user/{{reviewer}}"><div class='review_name'>{{reviewer}} </div></a>
+	  				</div>
+	  				{{review}}
+	  				<div class='edit_delete_reply'>
+	  					<button id='submit_button' class='reply'>Reply</button>
+	  					<button id='submit_button' class='edit'>Edit</button>
+	  					<button id='submit_button' class='delete'>Delete</button>
+	  				</div>
+	  			</div>
+	        {{/each}}
+	        
+		</ol>
+		<br><br><br><br>
+	</div>
+</section>
+<script src="/js/complete.js"></script>
+<script src="/js/Navigation_bar.js"></script>
+<script src="/js/Reviews.js"></script>
+<script type="text/javascript">
+	function display() {
+		var T = document.getElementById("contact");
+		if(T.style.display === "none"){
+		T.style.display = "block";  // <-- Set it to block
+		} else {
+			T.style.display = "none";
 		}
-	</script>
+	}
+
+
+
+</script>

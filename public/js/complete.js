@@ -1,17 +1,3 @@
-// var modal = document.getElementById("myModal");
-// var modal2 = document.getElementById("id02");
-
-// var btn = document.getElementById("myBtn");
-
-// var span = document.getElementsByClassName("close")[0];
-
-// window.onclick = function(event) {
-//   if (event.target == modal||event.target == modal2) {
-// 	modal.style.display = "none";
-// 	modal2.style.display = "none";
-//   }
-// }
-
 function readURL(input) {
 	if (input.files && input.files[0]) {
 		var reader = new FileReader();
@@ -73,17 +59,6 @@ $("#inpt_search").on('blur', function () {
 		$(this).parent('label').removeClass('active');
 });
 
-
-// REVIEW BOX
-// $("#submit_button").click(function(){
-// 	if($("#review").val()!=''){
-// 		$("ol").prepend("<div class='box2 animated jackInTheBox'><div class='review_header'><img src='dpic.jpg'> <div class='review_name'>Anonymous </div></div>"+$("#review").val()+"<div class='edit_delete_reply'><button id='submit_button' class = 'reply'>Reply</button><button id='submit_button' class = 'edit'>Edit</button><button id='submit_button' class = 'delete'>Delete</button></div></div>");
-// 		$('#review').val('');
-// 	}
-// 	else{
-// 		alert("Can't submit an empty text");
-// 	}
-//  });
 
 // GET CONTACT INFORMATION
  function display() {

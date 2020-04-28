@@ -130,24 +130,26 @@ const controller = {
 
     postReview: function (req, res) {
 
-        var reviewtext = req.body.reviewbox;
-        var r = {};
-
         if(req.session.username) {
-            r.reviewer = req.session.username;
-            r.dpreviewer = req.session.photo;
-            r.seller = req.body.username;
-            r.iName = req.body.itemName;
-            r.review = reviewtext;
+
+            var r = {
+                reviewer : req.session.username,
+                dpreviewer : req.session.photo,
+                seller : req.body.seller,
+                iName : req.body.iName,
+                review : req.body.review
+            }
 
             db.insertOne(Review, r);
 
-            if (r.iName == '')
-                res.redirect('user/' + review.seller);
+            if (r.seller != '')
+                res.redirect('user/' + r.seller);
             
-            else
-                res.redirect('item/' + review.iName);
+            else if (r.iName != '')
+                res.redirect('item/' + r.iName);
         }
+        else
+            alert ('Login to be able to review.')
     },
 
     getSearch: function (req, res) {
