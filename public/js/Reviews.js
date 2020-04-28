@@ -12,12 +12,12 @@ $(document).on('click', '.enter_reviewItem', function() {
 			iName: iName,
 			review: review
 		});
-
-		$('#reviewboxItem').val('');
 	}
 	else
 		alert("Can't submit an empty text");
 
+
+	$('#reviewboxItem').val('');
 });
 
 $(document).on('click', '.enter_reviewUser', function() {
@@ -40,4 +40,6 @@ $(document).on('click', '.enter_reviewUser', function() {
 	else
 		alert("Can't submit an empty text");
 
+	
+	$('#reviewboxItem').val('');
 });
