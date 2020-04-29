@@ -9,49 +9,49 @@ const Review = require('./models/ReviewModel.js');
 db.connect();
 
 // Users COLLECTION
-var users = [
-    {
-        fName: 'Gabriel',
-        lName: 'Olan',
-        pw: '1234',
-        username: 'Oninolan',
-        bio: 'Hi! My name is Olan and I love selling things!',
-        photo: 'img/olan.jpg'
-    },
-    {
-        fName: 'Earth',
-        lName: 'Lopez',
-        pw: '4321',
-        username: 'Lop3arth',
-        bio: 'My name is Earth! Welcome to my store!',
-        photo: 'img/earth.jpg'
-    },
-    {
-        fName: 'Manny',
-        lName: 'Pacquiao',
-        pw: '1234',
-        username: 'MannyP',
-        bio: 'The people\'s champ and Philippine senator',
-        photo: 'img/manny.jpg'
-    },
-    {
-        fName: 'Greta',
-        lName: 'Thunberg',
-        pw: '4321',
-        username: 'GretaThunberg',
-        bio: 'Environmentalist and dog lover',
-        photo: 'img/thunberg.jpg'
-    },
-    {
-        fName: 'Taylor',
-        lName: 'Swift',
-        pw: '1234',
-        username: 'Tswift',
-        bio: 'Artist of the decade and mother of meredith',
-        photo: 'img/taylor-swift.jpg'
-    }
-];
-db.insertMany(User, users);
+// var users = [
+//     {
+//         fName: 'Gabriel',
+//         lName: 'Olan',
+//         pw: '1234',
+//         username: 'Oninolan',
+//         bio: 'Hi! My name is Olan and I love selling things!',
+//         photo: 'img/olan.jpg'
+//     },
+//     {
+//         fName: 'Earth',
+//         lName: 'Lopez',
+//         pw: '4321',
+//         username: 'Lop3arth',
+//         bio: 'My name is Earth! Welcome to my store!',
+//         photo: 'img/earth.jpg'
+//     },
+//     {
+//         fName: 'Manny',
+//         lName: 'Pacquiao',
+//         pw: '1234',
+//         username: 'MannyP',
+//         bio: 'The people\'s champ and Philippine senator',
+//         photo: 'img/manny.jpg'
+//     },
+//     {
+//         fName: 'Greta',
+//         lName: 'Thunberg',
+//         pw: '4321',
+//         username: 'GretaThunberg',
+//         bio: 'Environmentalist and dog lover',
+//         photo: 'img/thunberg.jpg'
+//     },
+//     {
+//         fName: 'Taylor',
+//         lName: 'Swift',
+//         pw: '1234',
+//         username: 'Tswift',
+//         bio: 'Artist of the decade and mother of meredith',
+//         photo: 'img/taylor-swift.jpg'
+//     }
+// ];
+// db.insertMany(User, users);
 
 // ITEMS COLLECTION
 var items = [

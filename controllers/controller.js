@@ -148,8 +148,66 @@ const controller = {
             else if (r.iName != '')
                 res.redirect('item/' + r.iName);
         }
-        else
-            alert ('Login to be able to review.')
+    },
+
+    postItem: function (req,res) {
+
+        var errors = validationResult(req.body);
+
+        if (!errors.isEmpty()) {
+
+            errors = errors.errors;
+
+            var details = {};
+
+            if(req.session.username) {
+
+                details.flag = true;
+                details.Cusername = req.session.username;
+            }
+            else
+                details.flag = false;
+
+            for(i = 0; i < errors.length; i++)
+                details[errors[i].param + 'Error'] = errors[i].msg;
+
+            console.log(details);
+
+            res.render('profile', details);
+        }
+        else {
+            var iName = req.body.Item_name;
+            var bio = req.body.Description;
+            var price = req.body.Price;
+            var quantity = req.body.Quantity;
+            var contact = req.body.Contact;
+            var MOD = req.body.Payment;
+            var meet_location = req.body.Location;
+            var seller = req.session.username;
+
+            if (req.file == null){
+                var photo = 'img/dpic.jpg';
+            }
+            else
+                var photo = 'img/' + req.file.originalname;
+                
+                var item = {
+                    iName : iName,
+                    bio : bio,
+                    price : price,
+                    quantity : quantity,
+                    contact : contact,
+                    MOD : MOD,
+                    meet_location: meet_location,
+                    seller: seller,
+                    photo: photo
+                }
+
+                db.insertOne(Item, item);
+
+                res.redirect('user/' + req.session.username);
+
+        }
     },
 
     getSearch: function (req, res) {
@@ -282,6 +340,15 @@ const controller = {
         db.findOne(User, {username: username}, 'username', function (result) {
             res.send(result);
         });
+    },
+
+    getDelete: function (req, res) {
+
+        var query = {iName: req.query.iName};
+
+        db.deleteOne(Item, query);
+
+        res.redirect('user/' + req.session.username);
     },
 
     getLogOut: function (req, res) {

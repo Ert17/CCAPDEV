@@ -35,7 +35,7 @@
 		  				<span class="close-delete">&times;</span>
 						<image src="/{{photo}}" height="192px" width="192px"><br>
 						<p class="item_description">{{this.iName}}</p>
-						<p class="item_description">₱ {{this.price}}</p>
+						<p class="item_price">₱ {{this.price}}</p>
 					</div>
 				</a>
 	        {{/each}}
@@ -84,29 +84,45 @@
 	<section class="sell">
 		<b><p class= "title"><font size = "15" color= "white">SELL AN ITEM</font></p></b>
 		
-		<div class="avatar-upload">
-			<div class="avatar-edit">
-				<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-				<label for="imageUpload"></label>
-			</div>
-			<div class="avatar-preview2">
-				<div id="imagePreview" style="background-image: url(dpic.jpg);">
+		<form id="postitem" method="post" enctype="multipart/form-data" action="/sellItem">
+			<div class="avatar-upload">
+				<div class="avatar-edit">
+					<input type='file' id="photoUpload" name="iphoto" accept=".png, .jpg, .jpeg" />
+					<label for="photoUpload"></label>
+				</div>
+				<div class="avatar-preview2">
+					<div id="imagePreview" style="background-image: url(img/dpic.jpg);">
+					</div>
 				</div>
 			</div>
-		</div>
+			
+			<div class="item_form" style="align: center">
+				<font color="black">
+				<p>Item name:<input type="text" class="field" id="Item_name" name="Item_name"></p><br>
+				<p id="Item_nameError" class="error">{{Item_nameError}}</p>
 
-		<div class="sell_form">
-			<font color="black">
-			<p>Item name:<input type="text" id="Item_name" name="Item_name"></p><br>
-			<p>Description:<input type="text" id="Description" name="Description"></p><br>
-			<p>Price:<input type="text" id="Price" name="Price"></p><br>
-			<p>Quantity:<input type="text" id="Quantity" name="Quantity"></p><br>
-			<p>Meet up location:<input type="text" id="Location" name="Location"></p><br>
-			<p>Contact Information:<input type="text" id="Contact" name="Contact"></p><br>
-			<p>Mode of payment:<input type="text" id="Payment" name="Payment"></p>
-			</font>
-			<button id="submit_button" class = "enter_sell center">Submit</button>
-		</div>
+				<p>Description:<input type="text" class="field" id="Description" name="Description"></p><br>
+				<p id="DescriptionError" class="error">{{DescriptionError}}</p>
+
+				<p>Price:<input type="text" class="field" id="Price" name="Price"></p><br>
+				<p id="PriceError" class="error">{{PriceError}}</p>
+
+				<p>Quantity:<input type="text" class="field" id="Quantity" name="Quantity"></p><br>
+				<p id="QuantityError" class="error">{{QuantityError}}</p>
+
+				<p>Meet up location:<input type="text" class="field" id="Location" name="Location"></p><br>
+				<p id="LocationError" class="error">{{LocationError}}</p>
+
+				<p>Contact Information:<input type="text" class="field" id="Contact" name="Contact"></p><br>
+				<p id="ContactError" class="error">{{ContactError}}</p>
+
+				<p>Mode of payment:<input type="text" class="field" id="Payment" name="Payment"></p>
+				<p id="PaymentError" class="error">{{PaymentError}}</p>
+
+				</font>
+				<input type="submit" id="submit_button" class ="enter_sell center" value="Submit">
+			</div>
+		</form>
 	</section>
 </div>
 
@@ -125,15 +141,15 @@
 			</div>
 		</div>
 
-		<div class="sell_form">
+		<div class="profile_form">
 			<font color="black">
 			<p>First name:<input type="text" id="First_name" name="First_name"></p><br>
 			<p>Last name:<input type="text" id="Last_name" name="Last_name"></p><br>
 			<p>Username:<input type="text" id="Username" name="Username"></p><br>
-			<p>Description:<input type="text" id="Description" name="Description"></p><br>
+			<p>Bio:<input type="text" id="bioedit" name="bioedit"></p><br>
 			<p>Password:<input type="password" id="Password" name="Password"></p>
 			</font>
-			<button id="submit_button" class = "enter_sell center">Submit</button>
+			<button id="submit_button" class = "edit_profile center">Submit</button>
 		</div>
 	</section>
 </div>

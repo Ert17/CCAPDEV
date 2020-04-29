@@ -23,9 +23,11 @@ app.get('/', controller.getHome);
 
 app.post('/login', controller.postLogIn);
 
-app.post('/', validation.signupValidation(), upload.single('photo'), controller.postSignUp);
+app.post('/register', validation.signupValidation(), upload.single('photo'), controller.postSignUp);
 
 app.post('/review', controller.postReview);
+
+app.post('/sellItem', validation.itemValidation(), upload.single('iphoto'), controller.postItem);
 
 app.get('/logout', controller.getLogOut);
 
@@ -38,6 +40,8 @@ app.get('/browse', controller.getBrowse);
 app.get('/item/:iName', controller.getItem);
 
 app.get('/user/:username', controller.getUser);
+
+app.get('/deleteItem', controller.getDelete);
 
 // exports the object `app` (defined above) when another script exports from this file
 module.exports = app;

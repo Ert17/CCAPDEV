@@ -1,24 +1,25 @@
-var modal = document.getElementById("myModal");
-var modal2 = document.getElementById("id02");
+// var modal = document.getElementById("myModal");
+// var modal2 = document.getElementById("id02");
 
-// var btn = document.getElementById("myBtn");
+// // var btn = document.getElementById("myBtn");
 
-var span = document.getElementsByClassName("close")[0];
+// var span = document.getElementsByClassName("close")[0];
 
-// btn.onclick = function() {
-//   modal.style.display = "block";
+// // btn.onclick = function() {
+// //   modal.style.display = "block";
+// // }
+
+// span.onclick = function() {
+//   modal.style.display = "none";
+//   modal2.style.display = "none";
 // }
 
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-  if (event.target == modal||event.target == modal2) {
-	modal.style.display = "none";
-	modal2.style.display = "none";
-  }
-}
+// window.onclick = function(event) {
+//   if (event.target == modal||event.target == modal2) {
+// 	modal.style.display = "none";
+// 	modal2.style.display = "none";
+//   }
+// }
 
 function readURL(input) {
 	if (input.files && input.files[0]) {

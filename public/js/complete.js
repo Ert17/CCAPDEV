@@ -78,7 +78,7 @@ function display() {
 	if(I.style.display === "none"){
 		I.style.display = "block";  // <-- Set it to block
 		S.style.display = "none";
-		E.style.display = "block";
+		E.style.display = "none";
 	} 
 }
 
@@ -106,3 +106,13 @@ function Edit_Profile() {
 	S.style.display = "none";
 	} 
 }
+
+$('.posts-2').on('click', '.close-delete', function () {
+
+	var iName = $(this).siblings('.item_description').text();
+	console.log(iName);
+
+	$(this).parent().remove();
+
+	$.get('/deleteItem', {iName:iName});
+})

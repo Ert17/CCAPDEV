@@ -1,26 +1,4 @@
-$(document).on('click', '.enter_reviewItem', function() {
-
-	var review = $('#reviewboxItem').val();
-	console.log(review);
-
-	var iName = $(this).parent('form').parent('div').parent('div').parent('section').siblings('.item').children('div').children('#itemName').text();
-	console.log(iName);
-
-	if (review != '') {
-		$.post('/review', 
-		{
-			iName: iName,
-			review: review
-		});
-	}
-	else
-		alert("Can't submit an empty text");
-
-
-	$('#reviewboxItem').val('');
-});
-
-$(document).on('click', '.enter_reviewUser', function() {
+$('.box1').on('click', '.enter_reviewUser', function() {
 
 	var review = $('#reviewboxUser').val();
 	console.log(review);
@@ -41,5 +19,27 @@ $(document).on('click', '.enter_reviewUser', function() {
 		alert("Can't submit an empty text");
 
 	
+	$('#reviewboxUser').val('');
+});
+
+$('#Item_review').on('click', '.enter_reviewItem', function() {
+
+	var review = $('#reviewboxItem').val();
+	console.log(review);
+
+	var iName = $(this).parent('form').parent('div').parent('div').parent('section').siblings('.item').children('div').children('#itemName').text();
+	console.log(iName);
+
+	if (review != '') {
+		$.post('/review', 
+		{
+			iName: iName,
+			review: review
+		});
+	}
+	else
+		alert("Can't submit an empty text");
+
+
 	$('#reviewboxItem').val('');
 });
