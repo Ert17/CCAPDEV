@@ -342,11 +342,20 @@ const controller = {
         });
     },
 
-    getDelete: function (req, res) {
+    getDeleteItem: function (req, res) {
 
         var query = {iName: req.query.iName};
 
         db.deleteOne(Item, query);
+
+        res.redirect('user/' + req.session.username);
+    },
+
+    getDeleteReview: function (req, res) {
+
+        var query = {review: req.query.review};
+
+        db.deleteOne(Review, query);
 
         res.redirect('user/' + req.session.username);
     },

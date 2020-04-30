@@ -41,7 +41,9 @@ app.get('/item/:iName', controller.getItem);
 
 app.get('/user/:username', controller.getUser);
 
-app.get('/deleteItem', controller.getDelete);
+app.get('/deleteItem', controller.getDeleteItem);
+
+app.get('/deleteReview', controller.getDeleteReview);
 
 // exports the object `app` (defined above) when another script exports from this file
 module.exports = app;

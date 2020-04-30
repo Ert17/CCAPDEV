@@ -68,7 +68,7 @@ $("#inpt_search").on('blur', function () {
 	} else {
 		T.style.display = "none";
 	}
-}
+};
 
 // ITEM REVIEW WINDOW
 function display() {
@@ -80,7 +80,7 @@ function display() {
 		S.style.display = "none";
 		E.style.display = "none";
 	} 
-}
+};
 
 // SELL ITEM WINDOW
 function Sell_Item() {
@@ -93,7 +93,7 @@ function Sell_Item() {
 		E.style.display = "none";
 
 	} 
-}
+};
 
 // EDIT PROFIE WINDOW
 function Edit_Profile() {
@@ -105,7 +105,7 @@ function Edit_Profile() {
 	I.style.display = "none";
 	S.style.display = "none";
 	} 
-}
+};
 
 $('.posts-2').on('click', '.close-delete', function () {
 
@@ -115,4 +115,14 @@ $('.posts-2').on('click', '.close-delete', function () {
 	$(this).parent().remove();
 
 	$.get('/deleteItem', {iName:iName});
+});
+
+$('.reviewlist').on('click', '.delete', function () {
+
+	var review = $(this).parent('.edit_delete_reply').siblings('#reviewdiv').text();
+	console.log(review);
+
+	$(this).parent().parent().remove();
+
+	$.get('/deleteReview', {review:review});
 })

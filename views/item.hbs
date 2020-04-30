@@ -43,15 +43,15 @@
 				<input type="submit" id="submit_buttonItem" class="enter_reviewItem" value="Submit">
 			</form>
 		</div>
-		<ol>
+		<ol class="reviewlist">
 
 			{{#each reviews}}
 	  			<div class='box2 animated jackInTheBox'>
 	  				<div class='review_header'>
 	  					<image src="/{{dpreviewer}}"> 
-	  					<a href="/user/{{reviewer}}"><div class='review_name'>{{reviewer}} </div></a>
+	  					<a href="/user/{{reviewer}}"><div class='review_name'>{{reviewer}}</div></a>
 	  				</div>
-	  				{{review}}
+	  				<div id="reviewdiv">{{review}}</div>
 	  				<div class='edit_delete_reply'>
 	  					<button id='submit_button' class='reply'>Reply</button>
 	  					<button id='submit_button' class='edit'>Edit</button>

@@ -55,18 +55,19 @@
 						<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" ></label>
 						<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" ></label>
 					</fieldset>
+					<input type="number" min="1" max "5" id="stars" name="stars" value="1" hidden>
 					<input type="submit" id="submit_buttonProfile" class = "enter_reviewUser" value="Submit">
 				</form>
 			</div>
-			<ol>
+			<ol class="reviewlist">
 
 				{{#each reviews}}
 		  			<div class='box2 animated jackInTheBox'>
 		  				<div class='review_header'>
 		  					<image src="/{{dpreviewer}}"> 
-		  					<a href="/user/{{this.reviewer}}"><div class='review_name'>{{reviewer}} </div></a>
+		  					<a href="/user/{{this.reviewer}}"><div class='review_name'>{{reviewer}}</div></a>
 		  				</div>
-		  				{{review}}
+		  				<div id="reviewdiv">{{review}}</div>
 		  				<div class='edit_delete_reply'>
 		  					<button id='submit_button' class='reply'>Reply</button>
 		  					<button id='submit_button' class='edit'>Edit</button>

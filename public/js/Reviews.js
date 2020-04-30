@@ -1,4 +1,4 @@
-$('.box1').on('click', '.enter_reviewUser', function() {
+$('.box1').on('click', '#submit_buttonProfile', function() {
 
 	var review = $('#reviewboxUser').val();
 	console.log(review);
@@ -22,7 +22,7 @@ $('.box1').on('click', '.enter_reviewUser', function() {
 	$('#reviewboxUser').val('');
 });
 
-$('#Item_review').on('click', '.enter_reviewItem', function() {
+$('#Item_review').on('click', '#submit_buttonItem', function() {
 
 	var review = $('#reviewboxItem').val();
 	console.log(review);
