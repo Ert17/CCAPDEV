@@ -29,6 +29,8 @@ app.post('/review', controller.postReview);
 
 app.post('/sellItem', validation.itemValidation(), upload.single('iphoto'), controller.postItem);
 
+app.post('/editProfile', validation.editprofileValidation(), upload.single('photo2'), controller.postProfile);
+
 app.get('/logout', controller.getLogOut);
 
 app.get('/getCheckusername', controller.getCheckusername);
