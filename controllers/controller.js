@@ -259,7 +259,6 @@ const controller = {
                     photo : photo
                 }
 
-                //db.updateOne(User, user);
                 console.log(fName);
                 console.log(lName);
                 console.log(username);
