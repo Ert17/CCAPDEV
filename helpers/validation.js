@@ -22,6 +22,26 @@ const validation = {
         return validation;
     },
 
+    editprofileValidation: function () {
+
+        var validation = [
+
+            check('fName2', 'First name should not be empty.').notEmpty(),
+
+            check('lName2', 'Last name should not be empty.').notEmpty(),
+
+            check('usernameR2', 'Username should atleast contain 4 characters.')
+            .isLength({min: 4}),
+
+            check('pwR2', 'Password should contain at least 8 characters.')
+            .isLength({min: 8}),
+
+            check('bio2', 'Bio should not be empty.').notEmpty()
+        ];
+
+        return validation;
+    },
+
     itemValidation: function () {
 
         var validation = [
