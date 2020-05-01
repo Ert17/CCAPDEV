@@ -368,7 +368,81 @@ const controller = {
             res.redirect('/');
         })
 
-    }
+    },
+
+    postProfile: function (req, res) {
+
+        var errors = validationResult(req.body);
+
+        if (!errors.isEmpty()) {
+
+            errors = errors.errors;
+
+            var details = {};
+
+            if(req.session.username) {
+
+                details.flag = true;
+                details.Cusername = req.session.username;
+            }
+            else
+                details.flag = false;
+
+            for(i = 0; i < errors.length; i++)
+                details[errors[i].param + 'Error'] = errors[i].msg;
+
+            console.log(details);
+
+            res.render('home', details);
+        }
+        else {
+            var fName = req.body.fName2;
+            var lName = req.body.lName2;
+            var username = req.body.usernameR2;
+            var pw = req.body.pwR2;
+            var bio = req.body.bio2;
+
+            if (req.file == null){
+                var photo = 'img/dpic.jpg';
+            }
+            else
+                var photo = 'img/' + req.file.originalname;
+
+            bcrypt.hash(pw, saltRounds, function(err, hash) {
+                
+                var user = {
+                    fName : fName,
+                    lName : lName,
+                    username : username,
+                    pw : hash,
+                    bio : bio,
+                    photo : photo
+                }
+
+                req.session.username = user.username2;
+                req.session.fName = user.fName2;
+                req.session.photo = user.photo2;
+
+                //db.updateOne(User, user);
+                console.log(fName);
+                console.log(lName);
+                console.log(username);
+                console.log(pw);
+                console.log(bio);
+               // db.updateOne(User, {username:user.username}, user);
+                //db.updateOne(User, {username:req.session.username}, user);
+                var database = db.db('db');
+                var myquery = { username: req.session.username };
+                var newvalues = {$set: { fName: req.body.fName2, lName: req.body.lName2, username: req.body.usernameR2, pw : req.body.pwR2, bio : req.body.bio2}};
+                database.collection(User).updateOne(myquery, newvalues, function(err, res){
+                    if (err) throw err;
+                    console.log("1 document updated");
+                    db.close();
+                });
+                res.redirect('user/' + user.username);
+            });
+        }
+    },
 
 }
 

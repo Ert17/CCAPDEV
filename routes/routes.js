@@ -45,5 +45,7 @@ app.get('/deleteItem', controller.getDeleteItem);
 
 app.get('/deleteReview', controller.getDeleteReview);
 
+app.post('/editProfile', validation.editprofileValidation(), upload.single('photo2'), controller.postProfile);
+
 // exports the object `app` (defined above) when another script exports from this file
 module.exports = app;
