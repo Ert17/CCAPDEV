@@ -17,12 +17,9 @@ $('.box1').on('click', '#submit_buttonProfile', function() {
 	}
 	else
 		alert("Can't submit an empty text");
-
-	
-	$('#reviewboxUser').val('');
 });
 
-$('#Item_review').on('click', '#submit_buttonItem', function() {
+$('.box1').on('click', '#submit_buttonItem', function() {
 
 	var review = $('#reviewboxItem').val();
 	console.log(review);

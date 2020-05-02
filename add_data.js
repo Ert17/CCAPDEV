@@ -250,7 +250,7 @@ var reviews = [
         seller: 'Tswift',
         iName: '',
         reviewer: 'Oninolan',
-        review: 'So accomodating. Appreciates swifties fam <3',
+        review: 'So lovely. Appreciates swifties fam <3',
         dpreviewer: 'img/olan.jpg'
     },
     {
