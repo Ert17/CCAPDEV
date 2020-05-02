@@ -259,6 +259,7 @@ const controller = {
                     photo : photo
                 }
 
+                console.log(req.session.username);
                 console.log(fName);
                 console.log(lName);
                 console.log(username);
@@ -268,9 +269,11 @@ const controller = {
                 // db.updateOne(User, {username:user.username}, user);
                 db.updateOne(User, {username:req.session.username}, user);
 
-                req.session.username = user.username2;
-                req.session.fName = user.fName2;
-                req.session.photo = user.photo2;
+                req.session.username = user.username;
+                req.session.fName = user.fName;
+                req.session.photo = user.photo;
+
+                console.log(req.session.username);
 
                 res.redirect('user/' + user.username);
             });

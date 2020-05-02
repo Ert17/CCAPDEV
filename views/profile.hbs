@@ -134,8 +134,8 @@
 		<form align="center" id="edit" method="post" enctype="multipart/form-data" action="/editProfile">
 			<div class="avatar-upload">
 				<div class="avatar-edit">
-					<input type='file' id="imageUpload" name ="photo2" accept=".png, .jpg, .jpeg" />
-					<label for="imageUpload"></label>
+					<input type='file' id="imageUpload2" name ="photo2" accept=".png, .jpg, .jpeg" />
+					<label for="imageUpload2"></label>
 				</div>
 				<div class="avatar-preview2">
 					<div id="imagePreview" style="background-image: url(dpic.jpg);">
@@ -145,11 +145,20 @@
 
 			<div class="profile_form">
 				<font color="black">
-				<p>First name:<input type="text" class="field" id="fName2" name="fName2"></p><br>
-				<p>Last name:<input type="text" class="field" id="lName2" name="lName2"></p><br>
-				<p>Username:<input type="text" class="field" id="usernameR2" name="usernameR2"></p><br>
-				<p>Bio:<input type="text" class="field" id="bio2" name="bio2"></p><br>
+				<p>First name:<input type="text" class="field" id="fName2" name="fName2"></p>
+				<p id="fName2Error" class="error">{{fName2Error}}</p><br>
+
+				<p>Last name:<input type="text" class="field" id="lName2" name="lName2"></p>
+				<p id="lName2Error" class="error">{{lName2Error}}</p><br>
+
+				<p>Username:<input type="text" class="field" id="usernameR2" name="usernameR2"></p>
+				<p id="username2Error" class="error">{{username2Error}}</p><br>
+
+				<p>Bio:<input type="text" class="field" id="bio2" name="bio2"></p>
+				<p id="bio2Error" class="error">{{bio2Error}}</p><br>
+
 				<p>Password:<input type="password" class="field" id="pwR2" name="pwR2"></p>
+				<p id="pw2Error" class="error">{{pw2Error}}</p><br>
 				</font>
 				<button id="update" value="Update" class = "edit_profile center">Submit</button>
 			</div>
