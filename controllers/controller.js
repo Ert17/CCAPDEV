@@ -382,6 +382,11 @@ const controller = {
         else
             details.flag = false;
 
+        if(req.session.username != query1.username)
+            details.same = false;
+        else
+            details.same = true;
+
 
         db.findOne(User, query1, '', function (result) {
             db.findMany(Item, query2, '', function (results1) {

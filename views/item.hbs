@@ -33,14 +33,7 @@
 			<br>
 			<form id="reviewItem">
 				<textarea type="text" id="reviewboxItem" class="review_textbox box field" placeholder="Tell us something about this item..." rows="3" cols="30" maxlength="161" required></textarea><br>
-				<fieldset class="rating">
-					<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" ></label>
-					<input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" ></label>
-					<input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" ></label>
-					<input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" ></label>
-					<input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" ></label>
-				</fieldset>
-				<input type="submit" id="submit_buttonItem" class="enter_reviewItem" value="Submit">
+				<button id="submit_buttonItem" class="enter_reviewItem">Submit</button>
 			</form>
 		</div>
 		<ol class="reviewlist">
@@ -53,8 +46,6 @@
 	  				</div>
 	  				<div id="reviewdiv">{{review}}</div>
 	  				<div class='edit_delete_reply'>
-	  					<button id='submit_button' class='reply'>Reply</button>
-	  					<button id='submit_button' class='edit'>Edit</button>
 	  					<button id='submit_button' class='delete'>Delete</button>
 	  				</div>
 	  			</div>

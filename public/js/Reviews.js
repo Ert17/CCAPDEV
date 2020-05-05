@@ -36,7 +36,4 @@ $('.box1').on('click', '#submit_buttonItem', function() {
 	}
 	else
 		alert("Can't submit an empty text");
-
-
-	$('#reviewboxItem').val('');
 });
