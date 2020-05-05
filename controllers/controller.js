@@ -17,10 +17,26 @@ const controller = {
 
 	getHome: function (req, res) {
 
+        var details = {};
+
+        if(req.session.username) {
+            details.flag = true;
+            details.Cusername = req.session.username;
+            details.CfName = req.session.fName;
+        }
+        else
+            details.flag = false;
+
         db.findMany(Item, {}, '', function (results) {
+
+            details.items = results;
+
             res.render('home', 
                 {layout: 'home.hbs',
-                items: results});
+                items: details.items,
+                flag: details.flag,
+                CfName: details.CfName,
+                Cusername: details.Cusername});
         })
 	},
 
