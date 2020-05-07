@@ -61,12 +61,46 @@
 <script type="text/javascript">
 	function display() {
 		var T = document.getElementById("contact");
-		if(T.style.display === "none"){
-		T.style.display = "block";  // <-- Set it to block
-		} else {
-			T.style.display = "none";
+
+		var F = {{flag}};
+
+		console.log("flag is " + F);
+
+		if (F)
+		{
+			if(T.style.display === "none"){
+			T.style.display = "block";  // <-- Set it to block
+			} 
+			else {
+				T.style.display = "none";
+			}
 		}
-	}
+		else
+			alert('Log in to be able to get more details about the product.');
+	};
+
+	$('.box1').on('click', '#submit_buttonItem', function() {
+
+		if ({{flag}}) {
+			var review = $('#reviewboxItem').val();
+			console.log(review);
+
+			var iName = $(this).parent('form').parent('div').parent('div').parent('section').siblings('.item').children('div').children('#itemName').text();
+			console.log(iName);
+
+			if (review != '') {
+				$.post('/review', 
+				{
+					iName: iName,
+					review: review
+				});
+			}
+			else
+				alert("Can't submit an empty text");
+		}
+		else
+			alert('Log in to be able to submit a review about this item.');
+	});
 
 
 

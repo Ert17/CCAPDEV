@@ -73,7 +73,7 @@
 	<section class="sell">
 		<b><p class= "title"><font size = "15" color= "white">SELL AN ITEM</font></p></b>
 		
-		<form id="postitem" method="post" enctype="multipart/form-data" action="/sellItem">
+		<form align="center" id="postitem" method="post" enctype="multipart/form-data" action="/sellItem">
 			<div class="avatar-upload">
 				<div class="avatar-edit">
 					<input type='file' id="photoUpload" name="iphoto" accept=".png, .jpg, .jpeg" />
@@ -154,3 +154,30 @@
 
 	</section>
 </div>
+
+<script type="text/javascript">
+	$('.box1').on('click', '#submit_buttonProfile', function() {
+
+		if ({{flag}}) {
+			var review = $('#reviewboxUser').val();
+			console.log(review);
+
+			var seller = $(this).parent('form').parent('div').parent('div').parent('section').parent('div').siblings('.profile').children('#username').text();
+			console.log(seller);
+
+			var sellername = seller.substring(1);
+
+			if (review != '') {
+				$.post('/review', 
+				{
+					seller: sellername,
+					review: review
+				});
+			}
+			else
+				alert("Can't submit an empty text");
+		}
+		else
+			alert('Log in to be able to submit a review about this user.');
+	});
+</script>

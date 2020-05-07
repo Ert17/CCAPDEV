@@ -5,7 +5,6 @@ const url = "mongodb://localhost:27017/CCAPDEV";
 
 const User = require('./UserModel.js');
 const Item = require('./ItemModel.js');
-const Request = require('./RequestModel.js');
 const Review = require('./ReviewModel.js');
 
 const options = {
