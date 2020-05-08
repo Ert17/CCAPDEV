@@ -24,11 +24,11 @@
 							<form align="center" id="signup" method="post" enctype="multipart/form-data" action="/register">
 								<div class="avatar-upload">
 									<div class="avatar-edit">
-										<input type='file' id="imageUpload" name ="photo" accept=".png, .jpg, .jpeg" />
+										<input type='file' id="imageUpload" name ="photo" accept=".png, .jpg, .jpeg" onchange="readURL(this)" />
 										<label for="imageUpload"></label>
 									</div>
 									<div class="avatar-preview">
-										<div id="imagePreview" style="background-image: url(img/dpic.jpg);">
+										<div class="imagePreview" style="background-image: url(img/dpic.jpg);">
 										</div>
 									</div>
 								</div><br>
@@ -79,12 +79,11 @@
 							<form align="center" id="signup" method="post" enctype="multipart/form-data" action="/register">
 								<div class="avatar-upload">
 									<div class="avatar-edit">
-										<input type='file' id="imageUpload" name ="photo" accept=".png, .jpg, .jpeg" />
+										<input type='file' id="imageUpload" name ="photo" accept=".png, .jpg, .jpeg" onchange="readURL(this)"/>
 										<label for="imageUpload"></label>
 									</div>
 									<div class="avatar-preview">
-										<div id="imagePreview" style="background-image: url(img/dpic.jpg);">
-										</div>
+										<div class="imagePreview" style="background-image: url(img/dpic.jpg);"></div>
 									</div>
 								</div><br>
 								<input type="text" id="fName" name="fName" class="field" placeholder = "First Name" required><br><br>

@@ -76,11 +76,11 @@
 		<form align="center" id="postitem" method="post" enctype="multipart/form-data" action="/sellItem">
 			<div class="avatar-upload">
 				<div class="avatar-edit">
-					<input type='file' id="photoUpload" name="iphoto" accept=".png, .jpg, .jpeg" />
+					<input type='file' id="photoUpload" name="iphoto" accept=".png, .jpg, .jpeg" onchange="readURL2(this)"/>
 					<label for="photoUpload"></label>
 				</div>
 				<div class="avatar-preview2">
-					<div id="imagePreview" style="background-image: url(img/dpic.jpg);">
+					<div class="imagePreview2">
 					</div>
 				</div>
 			</div>
@@ -122,11 +122,11 @@
 		<form align="center" id="edit" method="post" enctype="multipart/form-data" action="/editProfile">
 			<div class="avatar-upload">
 				<div class="avatar-edit">
-					<input type='file' id="imageUpload2" name ="photo2" accept=".png, .jpg, .jpeg" />
+					<input type='file' id="imageUpload2" name ="photo2" accept=".png, .jpg, .jpeg" onchange="readURL3(this)"/>
 					<label for="imageUpload2"></label>
 				</div>
 				<div class="avatar-preview2">
-					<div id="imagePreview" style="background-image: url(dpic.jpg);">
+					<div class="imagePreview3" style="background-image: url(img/dpic.jpg);">
 					</div>
 				</div>
 			</div>

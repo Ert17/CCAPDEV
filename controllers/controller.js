@@ -274,6 +274,18 @@ const controller = {
                     photo : photo
                 }
 
+                var userReviewer = {
+                    reviewer: username
+                }
+
+                var userSeller = {
+                    seller: username
+                }
+
+                var userItem = {
+                    seller: username
+                }
+
                 console.log(req.session.username);
                 console.log(fName);
                 console.log(lName);
@@ -281,7 +293,9 @@ const controller = {
                 console.log(pw);
                 console.log(bio);
 
-                // db.updateOne(User, {username:user.username}, user);
+                db.updateOne(Item, {seller:req.session.username}, userItem);
+                db.updateOne(Review, {reviewer:req.session.username}, userReviewer);
+                db.updateOne(Review, {seller:req.session.username}, userSeller);
                 db.updateOne(User, {username:req.session.username}, user);
 
                 req.session.username = user.username;
@@ -363,7 +377,7 @@ const controller = {
 
         db.findOne(Item, query, projection, function (result) {
             db.findMany(Review, query, '', function (results) {
-                
+
                 if(result != null) {
 
                     details.iName = result.iName,    
