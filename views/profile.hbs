@@ -28,14 +28,12 @@
 		<div class="posts-2" style="height: 296px;">
 
 			{{#each items}}
-	            <a href="/item/{{iName}}">
-		  			<div class="card" align="left">
-		  				<span class="close-delete">&times;</span>
-						<image src="/{{photo}}" height="192px" width="192px"><br>
-						<p class="item_description">{{this.iName}}</p>
-						<p class="item_price">₱ {{this.price}}</p>
-					</div>
-				</a>
+	  			<div class="card" align="left">
+	  				<span class="close-delete">&times;</span>
+					<image src="/{{photo}}" height="192px" width="192px"><br>
+					<p class="item_description">{{this.iName}}</p>
+					<p class="item_price">₱ {{this.price}}</p>
+				</div>
 	        {{/each}}
 
 		</div>
@@ -84,28 +82,28 @@
 					</div>
 				</div>
 			</div>
-			
+			<br>
 			<div class="item_form">
 				<font color="black">
-				<p>Item name:<input type="text" class="field" id="Item_name" name="Item_name"></p><br>
-				<p id="Item_nameError" class="error">{{Item_nameError}}</p>
+				<p>Item name:<input type="text" class="field" id="Item_name" name="Item_name" required></p>
+				<p id="Item_nameError" class="error">{{Item_nameError}}</p><br>
 
-				<p>Description:<input type="text" class="field" id="Description" name="Description"></p><br>
-				<p id="DescriptionError" class="error">{{DescriptionError}}</p>
+				<p>Description:<input type="text" class="field" id="Description" name="Description" required></p>
+				<p id="DescriptionError" class="error">{{DescriptionError}}</p><br>
 
-				<p>Price:<input type="text" class="field" id="Price" name="Price"></p><br>
-				<p id="PriceError" class="error">{{PriceError}}</p>
+				<p>Price:<input type="number" class="field" id="Price" name="Price" required></p>
+				<p id="PriceError" class="error">{{PriceError}}</p><br>
 
-				<p>Quantity:<input type="text" class="field" id="Quantity" name="Quantity"></p><br>
-				<p id="QuantityError" class="error">{{QuantityError}}</p>
+				<p>Quantity:<input type="number" class="field" id="Quantity" name="Quantity" required></p>
+				<p id="QuantityError" class="error">{{QuantityError}}</p><br>
 
-				<p>Meet up location:<input type="text" class="field" id="Location" name="Location"></p><br>
-				<p id="LocationError" class="error">{{LocationError}}</p>
+				<p>Meet up location:<input type="text" class="field" id="Location" name="Location" required></p>
+				<p id="LocationError" class="error">{{LocationError}}</p><br>
 
-				<p>Contact Information:<input type="text" class="field" id="Contact" name="Contact"></p><br>
-				<p id="ContactError" class="error">{{ContactError}}</p>
+				<p>Contact Information:<input type="number" class="field" id="Contact" name="Contact" required></p>
+				<p id="ContactError" class="error">{{ContactError}}</p><br>
 
-				<p>Mode of payment:<input type="text" class="field" id="Payment" name="Payment"></p>
+				<p>Mode of payment:<input type="text" class="field" id="Payment" name="Payment" required></p>
 				<p id="PaymentError" class="error">{{PaymentError}}</p>
 
 				</font>
@@ -130,7 +128,7 @@
 					</div>
 				</div>
 			</div>
-
+			<br>
 			<div class="profile_form">
 				<font color="black">
 				<p>First name:<input type="text" class="field" id="fName2" name="fName2"></p>

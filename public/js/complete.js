@@ -148,6 +148,14 @@ function Edit_Profile() {
 	} 
 };
 
+$('.posts-2').on('click', '.card', function () {
+
+	var iName = $(this).children('.item_description').text();
+	console.log(iName);
+
+	location.replace('/item/' + iName);
+})
+
 $('.posts-2').on('click', '.close-delete', function () {
 
 	var iName = $(this).siblings('.item_description').text();

@@ -451,8 +451,9 @@ const controller = {
         var query = {iName: req.query.iName};
 
         db.deleteOne(Item, query);
+        db.deleteMany(Review, query);
 
-        res.redirect('user/' + req.session.username);
+        res.redirect('/user/' + req.session.username);
     },
 
     getDeleteReview: function (req, res) {
