@@ -31,10 +31,18 @@
   </head>
 
   <body>
+
     {{> headerhome}}
 
 
     {{{ body }}}
+    
+    {{#if fail}}
+        <script type="text/javascript">
+            var M = document.getElementById("myModal");
+            M.style.display="inline";
+        </script>
+    {{/if}}
     
   </body>
 </html>

@@ -130,7 +130,8 @@ const controller = {
                     else {
                         var details = {flag: false, error: `Username and/or Password is incorrect.`}
                         res.render('home', {layout: 'home.hbs',
-                                    error: details.error});
+                                            error: details.error,
+                                            fail: true});
                     }
                 });
             }
@@ -138,7 +139,8 @@ const controller = {
             else {
                 var details = {flag: false, error: `Username and/or Password is incorrect.`}
                 res.render('home', {layout: 'home.hbs',
-                                    error: details.error});
+                                    error: details.error,
+                                    fail: true});
             }
         });
     },
